@@ -101,6 +101,10 @@ main{width:100%;max-width:none}
 .code pre{border-radius:12px}
 .ex{border-radius:13px;padding:20px 22px}
 .ex:hover,.proj:hover{border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.proj > .lvl{display:inline-flex;margin-bottom:10px}
+.proj .project-check{max-width:none;margin:13px 0 0;padding:10px 12px;border-radius:9px;background:var(--accent-soft);color:var(--ink);font-size:13px;line-height:1.65}
+.proj .project-check b{color:var(--accent)}
+.project-deliverables{margin-top:22px}
 .lesson-pager{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:18px}
 .pager-link{display:flex;flex-direction:column;gap:4px;min-width:0;padding:17px 21px;text-decoration:none;border:1px solid var(--line);border-radius:13px;background:var(--surface);transition:border-color .18s,transform .18s}
 .pager-link:hover{border-color:var(--accent);transform:translateY(-2px)}
