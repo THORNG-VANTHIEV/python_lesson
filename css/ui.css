@@ -27,6 +27,7 @@ body{background:var(--paper);background-image:radial-gradient(circle at 92% 28%,
 .topbar-divider{width:1px;height:25px;background:var(--line);margin-inline:3px}
 .topbar-location{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .topbar-prog{background:var(--ok-soft);border:1px solid color-mix(in srgb,var(--ok) 16%,transparent);border-radius:99px;padding:3px 12px}
+.topbar-location,.brand{min-width:0}
 
 .hero{position:relative;overflow:hidden;background:#102752;border-bottom:0;color:#fff}
 .hero::before,.hero::after{content:"";position:absolute;pointer-events:none;border-radius:50%}
@@ -55,6 +56,7 @@ body{background:var(--paper);background-image:radial-gradient(circle at 92% 28%,
 .bar{background:rgba(255,255,255,.16);height:7px;margin-top:9px}
 .bar i{background:#ffcf70}
 .repl{position:relative;border:1px solid #46587c;border-radius:19px;padding:24px 26px;box-shadow:0 28px 50px rgba(4,13,32,.32);transform:rotate(1deg);font-size:13.5px;line-height:2.05}
+.repl-line{white-space:nowrap;width:max-content;min-width:100%}
 .repl::after{content:"main.py";position:absolute;top:18px;right:23px;color:#9ca9bc;font:12px var(--f-mono)}
 .repl .dots{gap:7px;margin-bottom:19px}
 .repl .dots i{width:9px;height:9px}
@@ -75,6 +77,7 @@ nav.toc{top:calc(var(--bar-h) + 20px);max-height:calc(100vh - var(--bar-h) - 36p
 .toc a.active .n{background:#2458d3;color:#fff}
 .toc a .ck{font-size:15px}
 main{width:100%;max-width:none}
+.hero-in > *,main > *{min-width:0}
 @media (min-width:901px){body.nav-collapsed main{max-width:920px}}
 .viewbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:3px 0 17px;padding-inline:3px}
 .viewbar > div{min-width:0;display:flex;flex-direction:column;line-height:1.45}
@@ -101,6 +104,10 @@ main{width:100%;max-width:none}
 .code pre{border-radius:12px}
 .ex{border-radius:13px;padding:20px 22px}
 .ex:hover,.proj:hover{border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.projects{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.lesson p,.lesson li,.intro p,.tips li,.proj h4{overflow-wrap:break-word}
+code.i{overflow-wrap:anywhere;white-space:normal}
+.code,.tbl,pre.out{max-width:100%}
 .proj > .lvl{display:inline-flex;margin-bottom:10px}
 .proj .project-check{max-width:none;margin:13px 0 0;padding:10px 12px;border-radius:9px;background:var(--accent-soft);color:var(--ink);font-size:13px;line-height:1.65}
 .proj .project-check b{color:var(--accent)}
@@ -114,9 +121,9 @@ main{width:100%;max-width:none}
 footer{margin:22px 3px 0;text-align:center;font-size:12px}
 
 @media (max-width:900px){
-  .hero-in{gap:30px;padding-block:42px 44px}
+  .hero-in{grid-template-columns:minmax(0,1fr);gap:30px;padding-block:42px 44px}
   .repl{transform:none;max-width:650px}
-  .shell{padding-block:20px 52px}
+  .shell{grid-template-columns:minmax(0,1fr);padding-block:20px 52px}
   nav.toc{top:0;max-height:none;border-radius:0;padding:0 12px calc(18px + env(safe-area-inset-bottom,0px));box-shadow:0 14px 40px rgba(0,0,0,.24)}
   .toc-intro{margin-top:10px}
   .intro,.lesson,.tips{padding:26px 25px}
@@ -129,14 +136,24 @@ footer{margin:22px 3px 0;text-align:center;font-size:12px}
   .hero h1{font-size:clamp(40px,10vw,54px)}
   .hero p.lead{font-size:15px}
   .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-  .stat{border:0;padding:0}
+  .stat{border:0;padding:0;min-width:0}
+  .progress-row{gap:8px;flex-wrap:wrap}
   .repl{font-size:11px;padding:19px 16px;border-radius:15px}
   .intro,.lesson,.tips{padding:22px 19px;border-radius:16px}
   .parts{grid-template-columns:1fr}
-  .lesson-pager{gap:8px}
+  .lesson-pager{grid-template-columns:1fr;gap:8px}
   .pager-link{padding:13px 12px}
   .pager-link strong{font-size:13px}
+  .pager-next{grid-column:1}
   .viewbar-home{font-size:12px}
+}
+@media (max-width:380px){
+  .hero h1{font-size:36px}
+  .hero-actions{display:grid;grid-template-columns:1fr}
+  .hero-actions .button{width:100%}
+  .intro,.lesson,.tips{padding:20px 16px}
+  .goals,.ex,.proj{padding:14px 15px}
+  .stat b{font-size:20px}
 }
 @media (prefers-reduced-motion:reduce){.button,.pager-link{transition:none}.button:hover,.pager-link:hover{transform:none}}
 @media print{.hero,.toc,.viewbar,.lesson-pager{display:none!important}.shell{display:block;padding:0}main>section[hidden]:not([hidden=until-found i]){display:block!important}.lesson,.intro,.tips{box-shadow:none;break-inside:avoid;page-break-after:always}}
