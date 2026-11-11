@@ -1,0 +1,40 @@
+/* Reset, design tokens (light + dark) and global element styles */
+:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;padding:0}
+img{max-width:100%}
+[hidden]:not([hidden=until-found i]){display:none!important}
+
+:root{
+  --paper:#f2f5f7; --surface:#ffffff; --ink:#15202a; --muted:#56636f; --line:#d9e1e7;
+  --accent:#1f5d8c; --accent-ink:#ffffff; --accent-soft:#e1ebf4;
+  --gold:#9a6608; --gold-soft:#faefd6;
+  --ok:#277447; --ok-soft:#e0f1e6; --warn:#9c4119; --warn-soft:#fae7dd;
+  --code-bg:#14202b; --code-ink:#e3eaf0; --code-line:#24323f; --out-bg:#e9eef2; --out-ink:#1f2b36;
+  --t-kw:#7cc4ff; --t-str:#a8e0a0; --t-com:#7f93a5; --t-num:#f5c46b; --t-fn:#e6b0ff; --t-op:#cbd6df;
+  --f-display:"Koulen","Kantumruy Pro",sans-serif;
+  --f-body:"Kantumruy Pro","Noto Sans Khmer","Khmer OS",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0e161e; --surface:#15202b; --ink:#e4eaef; --muted:#97a5b2; --line:#26343f;
+  --accent:#6aa9de; --accent-ink:#0e161e; --accent-soft:#1a2d3e;
+  --gold:#e5b452; --gold-soft:#2a2313;
+  --ok:#6cc58f; --ok-soft:#15291d; --warn:#ef9a73; --warn-soft:#2e1a12;
+  --code-bg:#0a1118; --code-line:#1d2a35; --out-bg:#1b2833; --out-ink:#d6dfe6;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0e161e; --surface:#15202b; --ink:#e4eaef; --muted:#97a5b2; --line:#26343f;
+  --accent:#6aa9de; --accent-ink:#0e161e; --accent-soft:#1a2d3e;
+  --gold:#e5b452; --gold-soft:#2a2313;
+  --ok:#6cc58f; --ok-soft:#15291d; --warn:#ef9a73; --warn-soft:#2e1a12;
+  --code-bg:#0a1118; --code-line:#1d2a35; --out-bg:#1b2833; --out-ink:#d6dfe6;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+:root{--bar-h:52px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar-h) + env(safe-area-inset-top,0px) + 16px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.85}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}

@@ -1,0 +1,1476 @@
+<!doctype html>
+<html lang="km">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>រៀន Python ពីសូន្យ | មេរៀន Python ជាភាសាខ្មែរ</title>
+  <meta name="description" content="មេរៀន Python ជាភាសាខ្មែរ សម្រាប់អ្នកចាប់ផ្តើម។ រៀនតាមជំហានជាមួយឧទាហរណ៍ លំហាត់ និងគម្រោងបញ្ចប់។">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&family=Koulen&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <link rel="stylesheet" href="css/ui.css">
+</head>
+<body>
+<!-- Runs before first paint so a collapsed sidebar doesn't flash open -->
+<script>try{if(localStorage.getItem('pyk-nav')==='closed')document.body.classList.add('nav-collapsed');}catch(e){}</script>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <button class="icon-btn" id="nav-toggle" type="button" aria-label="បើកម៉ឺនុយ" aria-controls="toc-nav" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <a class="brand" href="#start" aria-label="ទៅទំព័រដើមវគ្គ Python"><span class="brand-mark">Py</span><span class="brand-text">PYTHON <small>LEARNING STUDIO</small></span></a>
+    <span class="topbar-divider" aria-hidden="true"></span>
+    <span class="topbar-location" id="topbar-location">ទំព័រដើម</span>
+    <span class="topbar-prog" id="bar-prog" aria-hidden="true"></span>
+  </div>
+</div>
+<div class="scrim" id="scrim"></div>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> វគ្គសិក្សាសម្រាប់អ្នកចាប់ផ្តើម</div>
+      <h1>រៀន <span>Python</span> ពីសូន្យ</h1>
+      <p class="lead">មេរៀនទាំង ១២ ពីការដំឡើងកម្មវិធី រហូតដល់ការសរសេរកម្មវិធីពិតប្រាកដ។ មេរៀននីមួយៗមានទ្រឹស្តី ឧទាហរណ៍កូដ លំហាត់អនុវត្ត ចម្លើយគំរូ និងកិច្ចការផ្ទះ។</p>
+      <div class="hero-actions"><a class="button button-primary" href="#l1">ចាប់ផ្តើមរៀន <span aria-hidden="true">→</span></a><a class="button button-quiet" href="#start">ស្វែងយល់ពីវគ្គ</a></div>
+      <div class="stats">
+        <div class="stat"><b>១២</b><small>មេរៀន</small></div>
+        <div class="stat"><b>៣៦</b><small>លំហាត់អនុវត្ត</small></div>
+        <div class="stat"><b>១</b><small>គម្រោងបញ្ចប់</small></div>
+        <div class="stat"><b>~៣០</b><small>ម៉ោងសិក្សា</small></div>
+      </div>
+      <div class="progress" aria-live="polite">
+        <div class="progress-row"><span>វឌ្ឍនភាពរបស់អ្នក</span><span id="prog-text">០ / ១២ មេរៀន</span></div>
+        <div class="bar"><i id="prog-bar"></i></div>
+      </div>
+    </div>
+    <div class="repl" aria-hidden="true">
+      <div class="dots"><i></i><i></i><i></i></div>
+      <span class="p">&gt;&gt;&gt;</span> <span class="f">print</span>(<span class="s">"សួស្តី ពិភពលោក!"</span>)
+      <span class="o">សួស្តី ពិភពលោក!</span>
+      <span class="p">&gt;&gt;&gt;</span> usd = <span class="p">25</span>
+      <span class="p">&gt;&gt;&gt;</span> <span class="f">print</span>(usd * <span class="p">4100</span>, <span class="s">"រៀល"</span>)
+      <span class="o">102500 រៀល</span>
+      <span class="p">&gt;&gt;&gt;</span> <span class="cursor"></span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="toc" id="toc-nav" aria-label="មាតិកា">
+    <div class="drawer-head">
+      <span class="drawer-title">មាតិកា</span>
+      <button class="icon-btn" id="nav-close" type="button" aria-label="បិទម៉ឺនុយ">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="toc-intro"><span class="toc-intro-label">មេរៀនរបស់អ្នក</span><strong>ផែនទីការសិក្សា</strong><span>ជ្រើសរើសមេរៀនដើម្បីមើលមាតិកា</span></div>
+    <div class="toc-group"><h6>ចាប់ផ្តើម</h6>
+      <a href="#start"><span class="n">→</span><span class="t">របៀបប្រើវគ្គនេះ</span></a>
+    </div>
+    <div class="toc-group"><h6>ផ្នែកទី ១៖ មូលដ្ឋានគ្រឹះ</h6>
+      <a href="#l1" data-l="l1"><span class="n">1</span><span class="t">ស្គាល់ Python</span><span class="ck">✓</span></a>
+      <a href="#l2" data-l="l2"><span class="n">2</span><span class="t">អថេរ និងប្រភេទទិន្នន័យ</span><span class="ck">✓</span></a>
+      <a href="#l3" data-l="l3"><span class="n">3</span><span class="t">ប្រមាណវិធី</span><span class="ck">✓</span></a>
+      <a href="#l4" data-l="l4"><span class="n">4</span><span class="t">ការងារជាមួយអក្សរ</span><span class="ck">✓</span></a>
+    </div>
+    <div class="toc-group"><h6>ផ្នែកទី ២៖ លំហូរកម្មវិធី</h6>
+      <a href="#l5" data-l="l5"><span class="n">5</span><span class="t">លក្ខខណ្ឌ if</span><span class="ck">✓</span></a>
+      <a href="#l6" data-l="l6"><span class="n">6</span><span class="t">រង្វិលជុំ</span><span class="ck">✓</span></a>
+    </div>
+    <div class="toc-group"><h6>ផ្នែកទី ៣៖ ការរក្សាទុកទិន្នន័យ</h6>
+      <a href="#l7" data-l="l7"><span class="n">7</span><span class="t">List និង Tuple</span><span class="ck">✓</span></a>
+      <a href="#l8" data-l="l8"><span class="n">8</span><span class="t">Dictionary និង Set</span><span class="ck">✓</span></a>
+    </div>
+    <div class="toc-group"><h6>ផ្នែកទី ៤៖ កូដមានរបៀប</h6>
+      <a href="#l9" data-l="l9"><span class="n">9</span><span class="t">អនុគមន៍</span><span class="ck">✓</span></a>
+      <a href="#l10" data-l="l10"><span class="n">10</span><span class="t">ដោះស្រាយកំហុស</span><span class="ck">✓</span></a>
+      <a href="#l11" data-l="l11"><span class="n">11</span><span class="t">អាន និងសរសេរឯកសារ</span><span class="ck">✓</span></a>
+      <a href="#l12" data-l="l12"><span class="n">12</span><span class="t">Modules</span><span class="ck">✓</span></a>
+    </div>
+    <div class="toc-group"><h6>បញ្ចប់វគ្គ</h6>
+      <a href="#project"><span class="n">★</span><span class="t">គម្រោងបញ្ចប់</span></a>
+      <a href="#teacher"><span class="n">i</span><span class="t">គន្លឹះសម្រាប់គ្រូ</span></a>
+    </div>
+  </nav>
+
+  <main id="content" tabindex="-1">
+    <div class="viewbar" id="viewbar" hidden><div><span class="viewbar-label">មាតិកាវគ្គសិក្សា</span><strong id="viewbar-title"></strong></div><a href="#start" class="viewbar-home">ទំព័រដើម <span aria-hidden="true">↗</span></a></div>
+    <section class="intro" id="start">
+      <h2>របៀបប្រើវគ្គនេះ</h2>
+      <p style="margin:0">រៀនតាមលំដាប់ពីមេរៀនទី ១ ទៅទី ១២ ព្រោះមេរៀននីមួយៗប្រើចំណេះដឹងពីមេរៀនមុន។ វាយកូដដោយខ្លួនឯង កុំត្រឹមតែចម្លង។ សាកល្បងធ្វើលំហាត់ជាមុនសិន ទើបបើកមើលចម្លើយគំរូ។ ធីក «បានរៀនចប់» ពេលបញ្ចប់មេរៀន ដើម្បីតាមដានវឌ្ឍនភាព។</p>
+      <div class="parts">
+        <div><b>ផ្នែកទី ១</b>មូលដ្ឋានគ្រឹះ · មេរៀន ១–៤</div>
+        <div><b>ផ្នែកទី ២</b>លំហូរកម្មវិធី · មេរៀន ៥–៦</div>
+        <div><b>ផ្នែកទី ៣</b>រក្សាទុកទិន្នន័យ · មេរៀន ៧–៨</div>
+        <div><b>ផ្នែកទី ៤</b>កូដមានរបៀប · មេរៀន ៩–១២</div>
+      </div>
+    </section>
+
+<!-- ============ LESSON 1 ============ -->
+    <section class="lesson" id="l1">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ១</div>
+        <h2>ស្គាល់ Python និងរៀបចំកម្មវិធី</h2>
+        <div class="meta"><span class="chip">២ ម៉ោង</span><span class="chip">ផ្នែកទី ១</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l1" data-l="l1"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>យល់ថា Python ជាអ្វី និងគេប្រើវាធ្វើអ្វីខ្លះ</li>
+        <li>ដំឡើង Python ឬប្រើវាតាមអនឡាញបាន</li>
+        <li>សរសេរ និងដំណើរការកម្មវិធីដំបូងដោយប្រើ <code class="i">print()</code></li>
+      </ul></div>
+
+      <h3>Python ជាអ្វី?</h3>
+      <p>Python ជាភាសាសរសេរកម្មវិធីកម្រិតខ្ពស់ ដែល Guido van Rossum បង្កើតឡើងក្នុងឆ្នាំ 1991។ វាពេញនិយមខ្លាំងព្រោះកូដអានងាយ ស្ទើរតែដូចភាសាអង់គ្លេសធម្មតា។ គេប្រើ Python សម្រាប់៖</p>
+      <ul>
+        <li>បង្កើតគេហទំព័រ (Django, Flask)</li>
+        <li>វិភាគទិន្នន័យ និងគូរក្រាហ្វ</li>
+        <li>បញ្ញាសិប្បនិម្មិត (AI) និង Machine Learning</li>
+        <li>ធ្វើការងារដដែលៗដោយស្វ័យប្រវត្តិ ដូចជាប្តូរឈ្មោះឯកសាររាប់រយ</li>
+      </ul>
+
+      <h3>ជ្រើសរើសកម្មវិធីសរសេរកូដ</h3>
+      <div class="tbl"><table>
+        <tr><th>កម្មវិធី</th><th>ចំណុចល្អ</th><th>សមស្របសម្រាប់</th></tr>
+        <tr><td><b>Thonny</b></td><td>ងាយប្រើបំផុត មាន Python ភ្ជាប់មកស្រាប់</td><td>សិស្សទើបចាប់ផ្តើម</td></tr>
+        <tr><td><b>VS Code</b></td><td>ប្រើក្នុងការងារពិត ត្រូវដំឡើង extension «Python»</td><td>សិស្សដែលចង់បន្តជំនាញ</td></tr>
+        <tr><td><b>Google Colab</b></td><td>មិនចាំបាច់ដំឡើង ប្រើតាម browser</td><td>បន្ទប់ដែលកុំព្យូទ័រមិនអាចដំឡើងកម្មវិធី</td></tr>
+      </table></div>
+      <p><b>ដំឡើង Python លើ Windows៖</b></p>
+      <ol>
+        <li>ចូលទៅ <b>python.org/downloads</b> ហើយទាញយកកំណែចុងក្រោយ</li>
+        <li>ពេលដំឡើង ត្រូវធីកប្រអប់ <b>«Add python.exe to PATH»</b> ជាមុនសិន</li>
+        <li>បើក Command Prompt ហើយវាយ <code class="i">python --version</code> ដើម្បីពិនិត្យ</li>
+      </ol>
+
+      <h3>កម្មវិធីដំបូងរបស់អ្នក</h3>
+      <div class="code"><pre><code class="language-python">print("សួស្តី ពិភពលោក!")
+print("ខ្ញុំកំពុងរៀន Python")
+print(5 + 3)      # គណនាលេខ
+print("5 + 3")    # បង្ហាញជាអក្សរ មិនគណនា</code></pre></div>
+<pre class="out">សួស្តី ពិភពលោក!
+ខ្ញុំកំពុងរៀន Python
+8
+5 + 3</pre>
+      <div class="note"><b>ចងចាំ៖</b> Python ប្រកាន់អក្សរធំតូច។ <code class="i">print</code> ត្រឹមត្រូវ ប៉ុន្តែ <code class="i">Print</code> ខុស។ អក្សរត្រូវនៅក្នុងសញ្ញា <code class="i">" "</code> ឬ <code class="i">' '</code>។ ផ្នែកដែលនៅក្រោយសញ្ញា <code class="i">#</code> ជាការពន្យល់ (comment) ដែល Python មិនដំណើរការ។</div>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>ព័ត៌មានផ្ទាល់ខ្លួន</h4></div>
+          <p>សរសេរកម្មវិធីបង្ហាញឈ្មោះ អាយុ និងសាលារបស់អ្នក ជា ៣ បន្ទាត់។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">print("ឈ្មោះ៖ សុខ ដារ៉ា")
+print("អាយុ៖ 16 ឆ្នាំ")
+print("សាលា៖ វិទ្យាល័យ ហ៊ុន សែន")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>គូររាងដោយសញ្ញា *</h4></div>
+          <p>ប្រើ <code class="i">print()</code> ដើម្បីគូររាងចតុកោណកែងដែលមានទំហំ ៥ x ៣។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">print("* * * * *")
+print("*       *")
+print("* * * * *")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>ស្វែងរកកំហុស</h4></div>
+          <p>កូដខាងក្រោមមានកំហុស ៣ កន្លែង។ ស្វែងរក ហើយកែឲ្យត្រូវ។</p>
+          <div class="code"><pre><code class="language-python">Print("សួស្តី)
+print(ខ្ញុំរៀន Python)</code></pre></div>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <p>១) <code class="i">Print</code> ត្រូវសរសេរជា <code class="i">print</code>។ ២) ខ្វះសញ្ញា <code class="i">"</code> បិទនៅបន្ទាត់ទី ១។ ៣) អក្សរនៅបន្ទាត់ទី ២ មិនមានសញ្ញា <code class="i">" "</code>។</p>
+            <div class="code"><pre><code class="language-python">print("សួស្តី")
+print("ខ្ញុំរៀន Python")</code></pre></div>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>បង្កើត «កាតអាជីវកម្ម» ដោយប្រើ <code class="i">print()</code>។ កាតត្រូវមានឈ្មោះ មុខតំណែង លេខទូរស័ព្ទ និងស៊ុមព័ទ្ធជុំវិញដោយសញ្ញា <code class="i">=</code> និង <code class="i">|</code>។</p></div>
+    </section>
+
+<!-- ============ LESSON 2 ============ -->
+    <section class="lesson" id="l2">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ២</div>
+        <h2>អថេរ និងប្រភេទទិន្នន័យ</h2>
+        <div class="meta"><span class="chip">២ ម៉ោង</span><span class="chip">ផ្នែកទី ១</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l2" data-l="l2"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>បង្កើត និងដាក់ឈ្មោះអថេរបានត្រឹមត្រូវ</li>
+        <li>ស្គាល់ប្រភេទទិន្នន័យ <code class="i">int</code> <code class="i">float</code> <code class="i">str</code> <code class="i">bool</code></li>
+        <li>ទទួលទិន្នន័យពីអ្នកប្រើដោយ <code class="i">input()</code> និងបំលែងប្រភេទទិន្នន័យ</li>
+      </ul></div>
+
+      <h3>អថេរជាអ្វី?</h3>
+      <p>អថេរ (variable) ប្រៀបដូចប្រអប់ដែលមានស្លាកឈ្មោះ សម្រាប់ផ្ទុកទិន្នន័យ។ យើងប្រើសញ្ញា <code class="i">=</code> ដើម្បីដាក់តម្លៃចូលប្រអប់។</p>
+      <div class="code"><pre><code class="language-python">name = "សុខា"        # str  អក្សរ
+age = 16             # int  ចំនួនគត់
+height = 1.65        # float  ចំនួនទសភាគ
+is_student = True    # bool  ពិត ឬ មិនពិត
+
+print(name, age, height, is_student)
+print(type(age))
+print(type(height))</code></pre></div>
+<pre class="out">សុខា 16 1.65 True
+&lt;class 'int'&gt;
+&lt;class 'float'&gt;</pre>
+
+      <p><b>ច្បាប់ដាក់ឈ្មោះអថេរ៖</b></p>
+      <ul>
+        <li>ចាប់ផ្តើមដោយអក្សរ ឬ <code class="i">_</code> មិនអាចចាប់ផ្តើមដោយលេខ (<code class="i">2name</code> ខុស)</li>
+        <li>គ្មានដកឃ្លា ប្រើ <code class="i">_</code> ជំនួស ដូចជា <code class="i">student_name</code></li>
+        <li>មិនប្រើពាក្យគន្លឹះរបស់ Python ដូចជា <code class="i">if</code> <code class="i">for</code> <code class="i">True</code></li>
+        <li>ឈ្មោះគួរមានអត្ថន័យ៖ <code class="i">price</code> ល្អជាង <code class="i">p</code></li>
+      </ul>
+
+      <h3>ទទួលទិន្នន័យពីអ្នកប្រើ</h3>
+      <div class="code"><pre><code class="language-python">name = input("តើអ្នកឈ្មោះអ្វី? ")
+age = int(input("តើអ្នកអាយុប៉ុន្មាន? "))
+
+print("សួស្តី", name)
+print("ឆ្នាំក្រោយ អ្នកនឹងមានអាយុ", age + 1, "ឆ្នាំ")</code></pre></div>
+<pre class="out">តើអ្នកឈ្មោះអ្វី? វិចិត្រ
+តើអ្នកអាយុប៉ុន្មាន? 15
+សួស្តី វិចិត្រ
+ឆ្នាំក្រោយ អ្នកនឹងមានអាយុ 16 ឆ្នាំ</pre>
+      <div class="note"><b>សំខាន់៖</b> <code class="i">input()</code> តែងតែឲ្យលទ្ធផលជាអក្សរ (str) ជានិច្ច សូម្បីតែអ្នកវាយលេខក៏ដោយ។ ត្រូវប្រើ <code class="i">int()</code> ឬ <code class="i">float()</code> បំលែងសិន ទើបអាចគណនាបាន។</div>
+      <div class="tbl"><table>
+        <tr><th>កូដ</th><th>លទ្ធផល</th><th>ពន្យល់</th></tr>
+        <tr><td><code>int("25")</code></td><td><code>25</code></td><td>អក្សរ → ចំនួនគត់</td></tr>
+        <tr><td><code>float("3.5")</code></td><td><code>3.5</code></td><td>អក្សរ → ចំនួនទសភាគ</td></tr>
+        <tr><td><code>str(100)</code></td><td><code>"100"</code></td><td>លេខ → អក្សរ</td></tr>
+        <tr><td><code>int(3.9)</code></td><td><code>3</code></td><td>កាត់ចោលផ្នែកទសភាគ (មិនបង្គត់)</td></tr>
+      </table></div>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>គណនាអាយុ</h4></div>
+          <p>សួរឆ្នាំកំណើតរបស់អ្នកប្រើ រួចបង្ហាញអាយុរបស់គេនៅឆ្នាំ 2026។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">birth_year = int(input("ឆ្នាំកំណើតរបស់អ្នក: "))
+age = 2026 - birth_year
+print("អ្នកមានអាយុ", age, "ឆ្នាំ")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>ប្តូរប្រាក់ ដុល្លារ → រៀល</h4></div>
+          <p>សួរចំនួនដុល្លារ រួចបំលែងទៅជារៀល ដោយប្រើអត្រា ១ ដុល្លារ = ៤១០០ រៀល (ឧទាហរណ៍)។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">rate = 4100
+usd = float(input("ចំនួនដុល្លារ: "))
+khr = usd * rate
+print(usd, "ដុល្លារ =", khr, "រៀល")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>ប្តូរតម្លៃអថេរ</h4></div>
+          <p>មាន <code class="i">a = 5</code> និង <code class="i">b = 10</code>។ សរសេរកូដប្តូរតម្លៃ ឲ្យ <code class="i">a</code> ទៅជា 10 ហើយ <code class="i">b</code> ទៅជា 5។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">a = 5
+b = 10
+
+# វិធីទី ១៖ ប្រើអថេរបណ្តោះអាសន្ន
+temp = a
+a = b
+b = temp
+
+# វិធីទី ២៖ របៀបខ្លីរបស់ Python
+a, b = b, a
+
+print("a =", a, "b =", b)</code></pre></div>
+            <p>ចំណាំ៖ បើដំណើរការទាំងពីរវិធីជាប់គ្នា តម្លៃនឹងប្តូរពីរដង ហើយត្រឡប់មកដូចដើមវិញ។ សាកល្បងម្តងមួយវិធី។</p>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>១) សរសេរកម្មវិធីបំលែងសីតុណ្ហភាពពីអង្សាសេ (°C) ទៅហ្វារិនហៃ (°F) ដោយប្រើរូបមន្ត <code class="i">F = C * 9 / 5 + 32</code>។ ២) សរសេរកម្មវិធីបំលែងរៀលទៅដុល្លារ។</p></div>
+    </section>
+
+<!-- ============ LESSON 3 ============ -->
+    <section class="lesson" id="l3">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ៣</div>
+        <h2>ប្រមាណវិធី (Operators)</h2>
+        <div class="meta"><span class="chip">២ ម៉ោង</span><span class="chip">ផ្នែកទី ១</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l3" data-l="l3"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>ប្រើប្រមាណវិធីនព្វន្តទាំង ៧ បានត្រឹមត្រូវ</li>
+        <li>ប្រៀបធៀបតម្លៃ និងយល់ពីលទ្ធផល <code class="i">True</code> / <code class="i">False</code></li>
+        <li>បញ្ចូលលក្ខខណ្ឌច្រើនដោយ <code class="i">and</code> <code class="i">or</code> <code class="i">not</code></li>
+      </ul></div>
+
+      <h3>ប្រមាណវិធីនព្វន្ត</h3>
+      <div class="tbl"><table>
+        <tr><th>សញ្ញា</th><th>អត្ថន័យ</th><th>ឧទាហរណ៍</th><th>លទ្ធផល</th></tr>
+        <tr><td><code>+</code></td><td>បូក</td><td><code>7 + 3</code></td><td><code>10</code></td></tr>
+        <tr><td><code>-</code></td><td>ដក</td><td><code>7 - 3</code></td><td><code>4</code></td></tr>
+        <tr><td><code>*</code></td><td>គុណ</td><td><code>7 * 3</code></td><td><code>21</code></td></tr>
+        <tr><td><code>/</code></td><td>ចែក (ឲ្យទសភាគ)</td><td><code>7 / 3</code></td><td><code>2.333...</code></td></tr>
+        <tr><td><code>//</code></td><td>ចែកយកផលគត់</td><td><code>7 // 3</code></td><td><code>2</code></td></tr>
+        <tr><td><code>%</code></td><td>ចែកយកសំណល់</td><td><code>7 % 3</code></td><td><code>1</code></td></tr>
+        <tr><td><code>**</code></td><td>ស្វ័យគុណ</td><td><code>2 ** 3</code></td><td><code>8</code></td></tr>
+      </table></div>
+      <p>លំដាប់គណនា៖ <code class="i">**</code> មុនគេ បន្ទាប់មក <code class="i">* / // %</code> ហើយចុងក្រោយ <code class="i">+ -</code>។ ប្រើវង់ក្រចក <code class="i">( )</code> ដើម្បីកំណត់លំដាប់ដោយខ្លួនឯង។</p>
+
+      <h3>ឧទាហរណ៍៖ គណនាតម្លៃទំនិញក្រោយបញ្ចុះតម្លៃ</h3>
+      <div class="code"><pre><code class="language-python">price = 25.0        # តម្លៃមួយ (ដុល្លារ)
+qty = 3             # ចំនួន
+discount = 10       # បញ្ចុះ 10%
+
+subtotal = price * qty
+discount_amount = subtotal * discount / 100
+total = subtotal - discount_amount
+
+print("សរុបមុនបញ្ចុះ:", subtotal, "$")
+print("បញ្ចុះតម្លៃ:", discount_amount, "$")
+print("ត្រូវបង់:", total, "$")</code></pre></div>
+<pre class="out">សរុបមុនបញ្ចុះ: 75.0 $
+បញ្ចុះតម្លៃ: 7.5 $
+ត្រូវបង់: 67.5 $</pre>
+
+      <h3>ប្រមាណវិធីប្រៀបធៀប និងតក្កវិទ្យា</h3>
+      <p>ការប្រៀបធៀប <code class="i">==</code> (ស្មើ) <code class="i">!=</code> (មិនស្មើ) <code class="i">&gt;</code> <code class="i">&lt;</code> <code class="i">&gt;=</code> <code class="i">&lt;=</code> តែងតែឲ្យលទ្ធផលជា <code class="i">True</code> ឬ <code class="i">False</code>។</p>
+      <div class="code"><pre><code class="language-python">age = 20
+has_id = True
+
+print(age >= 18 and has_id)   # ពិតទាំងពីរ → True
+print(age &lt; 13 or age > 60)   # មិនពិតទាំងពីរ → False
+print(not has_id)             # បញ្ច្រាស → False
+
+score = 50
+score += 5                    # ដូចគ្នានឹង score = score + 5
+print(score)</code></pre></div>
+<pre class="out">True
+False
+False
+55</pre>
+      <div class="note"><b>កុំច្រឡំ៖</b> <code class="i">=</code> មួយ សម្រាប់ដាក់តម្លៃចូលអថេរ។ <code class="i">==</code> ពីរ សម្រាប់ប្រៀបធៀប។</div>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>ផ្ទៃក្រឡា និងបរិមាត្រចតុកោណកែង</h4></div>
+          <p>សួរបណ្តោយ និងទទឹង រួចបង្ហាញផ្ទៃក្រឡា និងបរិមាត្រ។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">length = float(input("បណ្តោយ (m): "))
+width = float(input("ទទឹង (m): "))
+area = length * width
+perimeter = 2 * (length + width)
+print("ផ្ទៃក្រឡា =", area, "m²")
+print("បរិមាត្រ =", perimeter, "m")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>បំលែងនាទីទៅម៉ោង</h4></div>
+          <p>សួរចំនួននាទី ហើយបង្ហាញជាម៉ោង និងនាទី។ ឧទាហរណ៍ 135 នាទី = 2 ម៉ោង 15 នាទី។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">total_minutes = int(input("ចំនួននាទី: "))
+hours = total_minutes // 60
+minutes = total_minutes % 60
+print(hours, "ម៉ោង", minutes, "នាទី")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>ចែកដាច់នឹង 3 និង 5</h4></div>
+          <p>សួរលេខមួយ ហើយបង្ហាញ <code class="i">True</code> បើលេខនោះចែកដាច់នឹង 3 ផង និង 5 ផង។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">n = int(input("បញ្ចូលលេខ: "))
+print(n % 3 == 0 and n % 5 == 0)</code></pre></div>
+            <p>ចែកដាច់ មានន័យថាសំណល់ស្មើ 0។ ដូច្នេះ 15, 30, 45 ឲ្យ True។</p>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>សរសេរកម្មវិធី «ចែកលុយញ៉ាំបាយ»៖ សួរតម្លៃសរុប និងចំនួនមិត្តភក្តិ បូកថ្លៃសេវា 10% រួចបង្ហាញថាម្នាក់ៗត្រូវបង់ប៉ុន្មាន។</p></div>
+    </section>
+
+<!-- ============ LESSON 4 ============ -->
+    <section class="lesson" id="l4">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ៤</div>
+        <h2>ការងារជាមួយអក្សរ (Strings)</h2>
+        <div class="meta"><span class="chip">២.៥ ម៉ោង</span><span class="chip">ផ្នែកទី ១</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l4" data-l="l4"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>ចាប់យកតួអក្សរ ឬផ្នែកណាមួយនៃ string ដោយ index និង slicing</li>
+        <li>ប្រើ method សំខាន់ៗ ដូចជា <code class="i">upper()</code> <code class="i">replace()</code> <code class="i">split()</code></li>
+        <li>បង្ហាញលទ្ធផលឲ្យស្អាតដោយ f-string</li>
+      </ul></div>
+
+      <h3>Index និង Slicing</h3>
+      <p>តួអក្សរនីមួយៗក្នុង string មានលេខរៀង (index) ចាប់ពី <b>0</b>។ Index អវិជ្ជមានរាប់ពីខាងចុង។</p>
+      <div class="tbl"><table class="idx">
+        <tr><th>តួអក្សរ</th><td>P</td><td>y</td><td>t</td><td>h</td><td>o</td><td>n</td></tr>
+        <tr><th>index</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+        <tr><th>អវិជ្ជមាន</th><td>-6</td><td>-5</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td></tr>
+      </table></div>
+      <div class="code"><pre><code class="language-python">word = "Python"
+print(word[0])     # តួទីមួយ
+print(word[-1])    # តួចុងក្រោយ
+print(word[0:3])   # ពី index 0 ដល់ 2 (មិនរាប់ 3)
+print(word[2:])    # ពី index 2 ដល់ចុង
+print(len(word))   # ចំនួនតួអក្សរ</code></pre></div>
+<pre class="out">P
+n
+Pyt
+thon
+6</pre>
+
+      <h3>Method សំខាន់ៗ</h3>
+      <div class="code"><pre><code class="language-python">text = "  Hello Cambodia  "
+print(text.strip())                    # លុបដកឃ្លាខាងដើម និងខាងចុង
+print(text.upper())                    # អក្សរធំទាំងអស់
+print(text.lower())                    # អក្សរតូចទាំងអស់
+print(text.replace("Cambodia", "Phnom Penh"))
+print("ក,ខ,គ,ឃ".split(","))            # បំបែកជា list</code></pre></div>
+<pre class="out">Hello Cambodia
+  HELLO CAMBODIA
+  hello cambodia
+  Hello Phnom Penh
+['ក', 'ខ', 'គ', 'ឃ']</pre>
+
+      <h3>f-string៖ បញ្ចូលអថេរក្នុងអក្សរ</h3>
+      <div class="code"><pre><code class="language-python">name = "ដារ៉ា"
+score = 87.456
+print(f"{name} ទទួលបានពិន្ទុ {score:.1f}")   # .1f = ទសភាគ 1 ខ្ទង់</code></pre></div>
+<pre class="out">ដារ៉ា ទទួលបានពិន្ទុ 87.5</pre>
+      <div class="note"><b>ចំណាំសម្រាប់អក្សរខ្មែរ៖</b> <code class="i">len("ខ្មែរ")</code> ឲ្យលទ្ធផល <b>5</b> មិនមែន 2 ទេ ព្រោះ Python រាប់ជើង <code class="i">្</code> និងស្រៈ <code class="i">ែ</code> ជាតួអក្សរដាច់ដោយឡែក (ខ ្ ម ែ រ)។</div>
+
+      <h3>ឧទាហរណ៍៖ បង្កើត username</h3>
+      <div class="code"><pre><code class="language-python">first = "Sok"
+last = "Dara"
+year = 2009
+username = first.lower() + last.lower() + str(year)[-2:]
+print("Username:", username)</code></pre></div>
+<pre class="out">Username: sokdara09</pre>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>រាប់តួអក្សរ និងពាក្យ</h4></div>
+          <p>សួរប្រយោគជាភាសាអង់គ្លេសមួយ ហើយបង្ហាញចំនួនតួអក្សរ និងចំនួនពាក្យ។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">sentence = input("បញ្ចូលប្រយោគ: ")
+print("ចំនួនតួអក្សរ:", len(sentence))
+print("ចំនួនពាក្យ:", len(sentence.split()))</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>សរសេរពាក្យបញ្ច្រាស</h4></div>
+          <p>សួរពាក្យមួយ ហើយបង្ហាញពាក្យនោះពីក្រោយមកមុខ។ ឧទាហរណ៍ <code class="i">hello</code> → <code class="i">olleh</code>។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">word = input("បញ្ចូលពាក្យ: ")
+print(word[::-1])    # ជំហាន -1 មានន័យថាដើរថយក្រោយ</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>បន្ទាត់វិក្កយបត្រ</h4></div>
+          <p>ប្រើ f-string បង្ហាញទំនិញ ចំនួន តម្លៃមួយ និងតម្លៃសរុប ឲ្យតម្រឹមជាជួរស្អាត។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">item = "Coffee"
+qty = 2
+price = 1.75
+print(f"{item:&lt;10}{qty:>3} x {price:>6.2f} = {qty * price:>7.2f}")</code></pre></div>
+<pre class="out">Coffee      2 x   1.75 =    3.50</pre>
+            <p><code class="i">:&lt;10</code> តម្រឹមឆ្វេងក្នុង 10 ខ្ទង់ <code class="i">:&gt;6.2f</code> តម្រឹមស្តាំក្នុង 6 ខ្ទង់ មានទសភាគ 2។</p>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>សរសេរកម្មវិធីពិនិត្យថាពាក្យមួយជា <b>palindrome</b> ឬទេ (អានពីមុខ និងពីក្រោយដូចគ្នា ដូចជា <code class="i">level</code> <code class="i">madam</code>)។ គន្លឹះ៖ ប្រៀបធៀប <code class="i">word == word[::-1]</code> ហើយប្រើ <code class="i">lower()</code> ផង។</p></div>
+    </section>
+
+<!-- ============ LESSON 5 ============ -->
+    <section class="lesson" id="l5">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ៥</div>
+        <h2>លក្ខខណ្ឌ if / elif / else</h2>
+        <div class="meta"><span class="chip">២.៥ ម៉ោង</span><span class="chip">ផ្នែកទី ២</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l5" data-l="l5"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>ឲ្យកម្មវិធីសម្រេចចិត្តធ្វើការងារផ្សេងគ្នាតាមលក្ខខណ្ឌ</li>
+        <li>ប្រើ <code class="i">if</code> <code class="i">elif</code> <code class="i">else</code> និងលក្ខខណ្ឌក្នុងលក្ខខណ្ឌ</li>
+        <li>យល់ពីសារៈសំខាន់នៃការចូលបន្ទាត់ (indentation)</li>
+      </ul></div>
+
+      <h3>រចនាសម្ព័ន្ធមូលដ្ឋាន</h3>
+      <div class="code"><pre><code class="language-python">age = int(input("អាយុរបស់អ្នក: "))
+
+if age >= 18:
+    print("អ្នកអាចបោះឆ្នោតបាន")
+else:
+    print("អ្នកនៅក្មេងពេកសម្រាប់បោះឆ្នោត")</code></pre></div>
+<pre class="out">អាយុរបស់អ្នក: 20
+អ្នកអាចបោះឆ្នោតបាន</pre>
+      <div class="note"><b>Indentation៖</b> កូដនៅក្រោម <code class="i">if</code> ត្រូវចូលបន្ទាត់ <b>4 ដកឃ្លា</b> (ឬចុច Tab)។ ត្រូវមានសញ្ញា <code class="i">:</code> នៅចុងបន្ទាត់ <code class="i">if</code> ជានិច្ច។ បើភ្លេច Python នឹងបង្ហាញ <code class="i">IndentationError</code>។</div>
+
+      <h3>ឧទាហរណ៍៖ វាយតម្លៃនិទ្ទេស A–F</h3>
+      <div class="code"><pre><code class="language-python">score = float(input("បញ្ចូលពិន្ទុ (0-100): "))
+
+if score >= 90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+elif score >= 70:
+    grade = "C"
+elif score >= 60:
+    grade = "D"
+elif score >= 50:
+    grade = "E"
+else:
+    grade = "F"
+
+print(f"និទ្ទេសរបស់អ្នកគឺ {grade}")</code></pre></div>
+<pre class="out">បញ្ចូលពិន្ទុ (0-100): 84
+និទ្ទេសរបស់អ្នកគឺ B</pre>
+      <p>Python ពិនិត្យលក្ខខណ្ឌពីលើចុះក្រោម ហើយឈប់នៅលក្ខខណ្ឌដំបូងដែលពិត។ ដូច្នេះពិន្ទុ 84 មិនដល់ 90 ប៉ុន្តែ ≥ 80 ទើបបាន B។</p>
+
+      <h3>លក្ខខណ្ឌក្នុងលក្ខខណ្ឌ</h3>
+      <div class="code"><pre><code class="language-python">has_ticket = True
+age = 10
+
+if has_ticket:
+    if age &lt; 12:
+        print("សូមចូល ត្រូវមានឪពុកម្តាយទៅជាមួយ")
+    else:
+        print("សូមអញ្ជើញចូល")
+else:
+    print("សូមទិញសំបុត្រជាមុនសិន")</code></pre></div>
+<pre class="out">សូមចូល ត្រូវមានឪពុកម្តាយទៅជាមួយ</pre>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>លេខគូ ឬលេខសេស</h4></div>
+          <p>សួរលេខមួយ ហើយប្រាប់ថាជាលេខគូ ឬលេខសេស។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">n = int(input("បញ្ចូលលេខ: "))
+if n % 2 == 0:
+    print(n, "ជាលេខគូ")
+else:
+    print(n, "ជាលេខសេស")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>លេខធំជាងគេក្នុងចំណោម ៣</h4></div>
+          <p>សួរលេខ ៣ ហើយបង្ហាញលេខធំជាងគេ ដោយមិនប្រើ <code class="i">max()</code>។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">a = float(input("លេខទី 1: "))
+b = float(input("លេខទី 2: "))
+c = float(input("លេខទី 3: "))
+
+if a >= b and a >= c:
+    biggest = a
+elif b >= a and b >= c:
+    biggest = b
+else:
+    biggest = c
+print("លេខធំជាងគេគឺ", biggest)</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>តម្លៃសំបុត្រតាមអាយុ</h4></div>
+          <p>ក្មេងក្រោម 12 ឆ្នាំ៖ 2,000 រៀល។ មនុស្សចាស់ចាប់ពី 60 ឆ្នាំ៖ 3,000 រៀល។ ផ្សេងពីនេះ៖ 5,000 រៀល។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">age = int(input("អាយុ: "))
+if age &lt; 12:
+    price = 2000
+elif age >= 60:
+    price = 3000
+else:
+    price = 5000
+print(f"តម្លៃសំបុត្រ: {price:,} រៀល")   # :, ដាក់សញ្ញាក្បៀស</code></pre></div>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>សរសេរកម្មវិធីចូលប្រព័ន្ធ (login)៖ កំណត់ username និង password ទុកក្នុងកូដ។ សួរអ្នកប្រើ ហើយបង្ហាញសារផ្សេងគ្នា បើ username ខុស បើ password ខុស ឬបើត្រូវទាំងពីរ។</p></div>
+    </section>
+
+<!-- ============ LESSON 6 ============ -->
+    <section class="lesson" id="l6">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ៦</div>
+        <h2>រង្វិលជុំ for និង while</h2>
+        <div class="meta"><span class="chip">៣ ម៉ោង</span><span class="chip">ផ្នែកទី ២</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l6" data-l="l6"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>ធ្វើការងារដដែលៗដោយ <code class="i">for</code> និង <code class="i">range()</code></li>
+        <li>ប្រើ <code class="i">while</code> ពេលមិនដឹងចំនួនដងជាមុន</li>
+        <li>គ្រប់គ្រងរង្វិលជុំដោយ <code class="i">break</code> និង <code class="i">continue</code></li>
+      </ul></div>
+
+      <h3>រង្វិលជុំ for និង range()</h3>
+      <div class="tbl"><table>
+        <tr><th>កូដ</th><th>លេខដែលបាន</th></tr>
+        <tr><td><code>range(5)</code></td><td><code>0 1 2 3 4</code></td></tr>
+        <tr><td><code>range(1, 6)</code></td><td><code>1 2 3 4 5</code></td></tr>
+        <tr><td><code>range(0, 11, 2)</code></td><td><code>0 2 4 6 8 10</code></td></tr>
+        <tr><td><code>range(5, 0, -1)</code></td><td><code>5 4 3 2 1</code></td></tr>
+      </table></div>
+      <div class="code"><pre><code class="language-python">n = int(input("តារាងគុណលេខ: "))
+for i in range(1, 11):
+    print(f"{n} x {i} = {n * i}")</code></pre></div>
+<pre class="out">តារាងគុណលេខ: 7
+7 x 1 = 7
+7 x 2 = 14
+...
+7 x 10 = 70</pre>
+
+      <h3>រង្វិលជុំ while</h3>
+      <div class="code"><pre><code class="language-python">count = 3
+while count > 0:
+    print(count)
+    count -= 1        # បើភ្លេចបន្ទាត់នេះ រង្វិលជុំនឹងមិនចេះចប់
+print("ចាប់ផ្តើម!")</code></pre></div>
+<pre class="out">3
+2
+1
+ចាប់ផ្តើម!</pre>
+
+      <h3>break និង continue</h3>
+      <div class="code"><pre><code class="language-python">for i in range(1, 11):
+    if i == 5:
+        continue      # រំលងលេខ 5
+    if i == 8:
+        break         # ឈប់រង្វិលជុំភ្លាម
+    print(i, end=" ")</code></pre></div>
+<pre class="out">1 2 3 4 6 7 </pre>
+
+      <h3>ឧទាហរណ៍៖ ល្បែងទាយលេខ</h3>
+      <div class="code"><pre><code class="language-python">import random
+
+secret = random.randint(1, 20)   # លេខចៃដន្យពី 1 ដល់ 20
+tries = 0
+
+while True:
+    guess = int(input("ទាយលេខពី 1 ដល់ 20: "))
+    tries += 1
+    if guess &lt; secret:
+        print("តូចពេក!")
+    elif guess > secret:
+        print("ធំពេក!")
+    else:
+        print(f"ត្រូវហើយ! អ្នកទាយ {tries} ដង")
+        break</code></pre></div>
+<pre class="out">ទាយលេខពី 1 ដល់ 20: 10
+ធំពេក!
+ទាយលេខពី 1 ដល់ 20: 5
+តូចពេក!
+ទាយលេខពី 1 ដល់ 20: 7
+ត្រូវហើយ! អ្នកទាយ 3 ដង</pre>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>ផលបូក 1 ដល់ 100</h4></div>
+          <p>ប្រើរង្វិលជុំ <code class="i">for</code> គណនាផលបូក 1 + 2 + 3 + ... + 100។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">total = 0
+for i in range(1, 101):
+    total += i
+print("ផលបូក =", total)    # 5050</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>លេខគូពី 1 ដល់ 20</h4></div>
+          <p>បង្ហាញលេខគូទាំងអស់ពី 1 ដល់ 20 ដោយប្រើវិធីពីរយ៉ាង។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python"># វិធីទី ១៖ ប្រើជំហាន 2
+for i in range(2, 21, 2):
+    print(i, end=" ")
+
+print()
+
+# វិធីទី ២៖ ប្រើ if ពិនិត្យ
+for i in range(1, 21):
+    if i % 2 == 0:
+        print(i, end=" ")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>វាយ password បាន ៣ ដង</h4></div>
+          <p>អនុញ្ញាតឲ្យអ្នកប្រើវាយ password បានតែ ៣ ដង។ បើត្រូវ បង្ហាញ «ស្វាគមន៍»។ បើខុសទាំង ៣ ដង បង្ហាញ «គណនីត្រូវបានចាក់សោ»។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">correct = "python123"
+attempts = 0
+
+while attempts &lt; 3:
+    pw = input("Password: ")
+    attempts += 1
+    if pw == correct:
+        print("ស្វាគមន៍!")
+        break
+    else:
+        print(f"ខុស! នៅសល់ {3 - attempts} ដងទៀត")
+
+if attempts == 3 and pw != correct:
+    print("គណនីត្រូវបានចាក់សោ")</code></pre></div>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>សួរចំនួនជួរ <code class="i">n</code> ហើយគូរត្រីកោណដោយសញ្ញា <code class="i">*</code>។ ឧទាហរណ៍ n = 4 បង្ហាញ * / ** / *** / ****។ គន្លឹះ៖ <code class="i">"*" * 3</code> ឲ្យ <code class="i">***</code>។</p></div>
+    </section>
+
+<!-- ============ LESSON 7 ============ -->
+    <section class="lesson" id="l7">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ៧</div>
+        <h2>List និង Tuple</h2>
+        <div class="meta"><span class="chip">២.៥ ម៉ោង</span><span class="chip">ផ្នែកទី ៣</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l7" data-l="l7"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>ផ្ទុកទិន្នន័យច្រើនក្នុងអថេរតែមួយដោយ list</li>
+        <li>បន្ថែម លុប តម្រៀប និងស្វែងរកធាតុក្នុង list</li>
+        <li>ស្គាល់ភាពខុសគ្នារវាង list និង tuple</li>
+      </ul></div>
+
+      <h3>បង្កើត និងកែប្រែ list</h3>
+      <div class="code"><pre><code class="language-python">scores = [85, 92, 78, 64, 90]
+
+print(scores[0])        # ធាតុទីមួយ → 85
+scores.append(70)       # បន្ថែមនៅចុង
+scores.insert(0, 100)   # បញ្ចូលនៅ index 0
+scores.remove(64)       # លុបតម្លៃ 64
+last = scores.pop()     # ដកធាតុចុងក្រោយចេញ (70)
+scores.sort()           # តម្រៀបពីតូចទៅធំ
+print(scores)
+print(92 in scores)     # ពិនិត្យថាមាន 92 ឬទេ</code></pre></div>
+<pre class="out">85
+[78, 85, 90, 92, 100]
+True</pre>
+
+      <h3>ដើរកាត់ list ដោយ for</h3>
+      <div class="code"><pre><code class="language-python">fruits = ["ស្វាយ", "ចេក", "ម្នាស់"]
+for fruit in fruits:
+    print("ខ្ញុំចូលចិត្ត", fruit)</code></pre></div>
+<pre class="out">ខ្ញុំចូលចិត្ត ស្វាយ
+ខ្ញុំចូលចិត្ត ចេក
+ខ្ញុំចូលចិត្ត ម្នាស់</pre>
+
+      <h3>Tuple៖ list ដែលកែមិនបាន</h3>
+      <p>Tuple ប្រើវង់ក្រចក <code class="i">( )</code>។ បន្ទាប់ពីបង្កើតហើយ មិនអាចកែប្រែបានទេ។ សមសម្រាប់ទិន្នន័យដែលមិនផ្លាស់ប្តូរ ដូចជាឈ្មោះថ្ងៃ។</p>
+      <div class="code"><pre><code class="language-python">days = ("ច័ន្ទ", "អង្គារ", "ពុធ", "ព្រហស្បតិ៍", "សុក្រ", "សៅរ៍", "អាទិត្យ")
+print(days[4])
+days[0] = "Monday"     # កំហុស!</code></pre></div>
+<pre class="out">សុក្រ
+TypeError: 'tuple' object does not support item assignment</pre>
+
+      <h3>ឧទាហរណ៍៖ ស្ថិតិពិន្ទុរបស់ថ្នាក់</h3>
+      <div class="code"><pre><code class="language-python">scores = [85, 92, 78, 64, 90, 55, 73]
+
+average = sum(scores) / len(scores)
+print(f"ចំនួនសិស្ស: {len(scores)}")
+print(f"មធ្យមភាគ: {average:.2f}")
+print(f"ខ្ពស់បំផុត: {max(scores)}")
+print(f"ទាបបំផុត: {min(scores)}")</code></pre></div>
+<pre class="out">ចំនួនសិស្ស: 7
+មធ្យមភាគ: 76.71
+ខ្ពស់បំផុត: 92
+ទាបបំផុត: 55</pre>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>បញ្ជីទិញឥវ៉ាន់</h4></div>
+          <p>បង្កើតបញ្ជីឥវ៉ាន់ ៣ មុខ បន្ថែម ១ មុខ លុប ១ មុខ ហើយបង្ហាញបញ្ជីចុងក្រោយ និងចំនួនមុខ។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">shopping = ["អង្ករ", "ស៊ុត", "ត្រី"]
+shopping.append("បន្លែ")
+shopping.remove("ត្រី")
+print(shopping)
+print("ចំនួន:", len(shopping), "មុខ")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>រាប់សិស្សជាប់</h4></div>
+          <p>ពី list ពិន្ទុខាងលើ រាប់ចំនួនសិស្សដែលបានពិន្ទុចាប់ពី 50 ឡើង។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">scores = [85, 92, 78, 45, 90, 38, 73]
+passed = 0
+for s in scores:
+    if s >= 50:
+        passed += 1
+print(f"សិស្សជាប់: {passed} នាក់ ក្នុងចំណោម {len(scores)} នាក់")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>រកសិស្សពូកែជាងគេ</h4></div>
+          <p>មាន list ឈ្មោះ និង list ពិន្ទុតាមលំដាប់ដូចគ្នា។ បង្ហាញឈ្មោះសិស្សដែលបានពិន្ទុខ្ពស់ជាងគេ។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">names = ["ដារ៉ា", "សុភា", "វិចិត្រ", "ចាន់ថា"]
+scores = [78, 95, 88, 91]
+
+best_index = scores.index(max(scores))
+print("សិស្សពូកែជាងគេ:", names[best_index])</code></pre></div>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>ប្រើរង្វិលជុំសួរពិន្ទុ ៥ ដង ដាក់ចូល list រួចបង្ហាញពិន្ទុតម្រៀបពីធំទៅតូច។ គន្លឹះ៖ <code class="i">scores.sort(reverse=True)</code>។</p></div>
+    </section>
+
+<!-- ============ LESSON 8 ============ -->
+    <section class="lesson" id="l8">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ៨</div>
+        <h2>Dictionary និង Set</h2>
+        <div class="meta"><span class="chip">២.៥ ម៉ោង</span><span class="chip">ផ្នែកទី ៣</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l8" data-l="l8"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>ផ្ទុកទិន្នន័យជាគូ key : value ដោយ dictionary</li>
+        <li>បន្ថែម កែ លុប និងដើរកាត់ dictionary</li>
+        <li>ប្រើ set ដើម្បីលុបតម្លៃស្ទួន និងប្រៀបធៀបក្រុម</li>
+      </ul></div>
+
+      <h3>Dictionary</h3>
+      <p>Dictionary ដូចវចនានុក្រម៖ រកមើលតម្លៃតាមរយៈ key (ពាក្យគន្លឹះ) ជំនួសឲ្យលេខ index។</p>
+      <div class="code"><pre><code class="language-python">student = {"name": "សុភា", "age": 17, "grade": "A"}
+
+print(student["name"])
+print(student.get("phone", "គ្មាន"))   # get មិនបង្កកំហុស បើគ្មាន key
+
+student["age"] = 18          # កែតម្លៃ
+student["city"] = "ភ្នំពេញ"   # បន្ថែម key ថ្មី
+del student["grade"]         # លុប
+
+for key, value in student.items():
+    print(key, ":", value)</code></pre></div>
+<pre class="out">សុភា
+គ្មាន
+name : សុភា
+age : 18
+city : ភ្នំពេញ</pre>
+
+      <h3>Set</h3>
+      <p>Set ជាក្រុមតម្លៃដែល<b>មិនស្ទួន</b> និង<b>គ្មានលំដាប់</b>។</p>
+      <div class="code"><pre><code class="language-python">football = {"ដារ៉ា", "សុខា", "វណ្ណា"}
+music = {"សុខា", "ចាន់", "វណ្ណា"}
+
+print(football | music)    # union៖ សិស្សទាំងអស់
+print(football &amp; music)    # intersection៖ ចូលរួមទាំងពីរក្លឹប
+print(football - music)    # ចូលតែក្លឹបបាល់ទាត់
+
+print(set([1, 2, 2, 3, 3, 3]))   # លុបតម្លៃស្ទួន</code></pre></div>
+<pre class="out">{'ដារ៉ា', 'សុខា', 'វណ្ណា', 'ចាន់'}
+{'សុខា', 'វណ្ណា'}
+{'ដារ៉ា'}
+{1, 2, 3}</pre>
+      <div class="note"><b>ចំណាំ៖</b> លំដាប់នៃធាតុក្នុង set អាចខុសពីឧទាហរណ៍ខាងលើ ពេលអ្នកដំណើរការលើកុំព្យូទ័ររបស់អ្នក។ នេះជារឿងធម្មតា។</div>
+
+      <h3>ឧទាហរណ៍៖ ម៉ឺនុយហាងកាហ្វេ</h3>
+      <div class="code"><pre><code class="language-python">menu = {
+    "កាហ្វេទឹកដោះគោ": 2.00,
+    "តែបៃតង": 1.50,
+    "កាហ្វេខ្មៅ": 1.25,
+    "ទឹកក្រូច": 1.75,
+}
+
+print("===== ម៉ឺនុយ =====")
+for item, price in menu.items():
+    print(f"{item}: ${price:.2f}")
+
+order = {"កាហ្វេទឹកដោះគោ": 2, "តែបៃតង": 1}
+total = 0
+for item, qty in order.items():
+    total += menu[item] * qty
+print(f"សរុបត្រូវបង់: ${total:.2f}")</code></pre></div>
+<pre class="out">===== ម៉ឺនុយ =====
+កាហ្វេទឹកដោះគោ: $2.00
+តែបៃតង: $1.50
+កាហ្វេខ្មៅ: $1.25
+ទឹកក្រូច: $1.75
+សរុបត្រូវបង់: $5.50</pre>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>សៀវភៅលេខទូរស័ព្ទ</h4></div>
+          <p>បង្កើត dictionary ឈ្មោះ និងលេខទូរស័ព្ទ ៣ នាក់។ សួរឈ្មោះ ហើយបង្ហាញលេខ ឬ «រកមិនឃើញ»។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">phones = {"ដារ៉ា": "012 345 678", "សុភា": "098 765 432", "វណ្ណា": "077 111 222"}
+name = input("រកឈ្មោះ: ")
+print(phones.get(name, "រកមិនឃើញ"))</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>រាប់ពាក្យដែលកើតឡើង</h4></div>
+          <p>រាប់ថាពាក្យនីមួយៗក្នុងប្រយោគ <code class="i">"the cat and the dog and the bird"</code> កើតឡើងប៉ុន្មានដង។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">sentence = "the cat and the dog and the bird"
+counts = {}
+for word in sentence.split():
+    counts[word] = counts.get(word, 0) + 1
+print(counts)</code></pre></div>
+<pre class="out">{'the': 3, 'cat': 1, 'and': 2, 'dog': 1, 'bird': 1}</pre>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>សិស្សពីរថ្នាក់</h4></div>
+          <p>មានសិស្សចុះឈ្មោះរៀនភាសាអង់គ្លេស និងរៀនកុំព្យូទ័រ។ រកសិស្សដែលរៀនទាំងពីរ និងចំនួនសិស្សសរុប (មិនរាប់ស្ទួន)។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">english = {"ដារ៉ា", "សុភា", "ចាន់", "វិចិត្រ"}
+computer = {"សុភា", "វិចិត្រ", "លីណា"}
+
+print("រៀនទាំងពីរ:", english &amp; computer)
+print("សិស្សសរុប:", len(english | computer), "នាក់")</code></pre></div>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>បង្កើត dictionary ពិន្ទុតាមមុខវិជ្ជារបស់សិស្សម្នាក់ (ឧ. <code class="i">{"គណិត": 85, "រូប": 78, ...}</code>)។ គណនាមធ្យមភាគ ហើយបង្ហាញមុខវិជ្ជាដែលបានពិន្ទុខ្ពស់ជាងគេ។ គន្លឹះ៖ <code class="i">max(scores, key=scores.get)</code>។</p></div>
+    </section>
+
+<!-- ============ LESSON 9 ============ -->
+    <section class="lesson" id="l9">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ៩</div>
+        <h2>អនុគមន៍ (Functions)</h2>
+        <div class="meta"><span class="chip">៣ ម៉ោង</span><span class="chip">ផ្នែកទី ៤</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l9" data-l="l9"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>បង្កើតអនុគមន៍ផ្ទាល់ខ្លួនដោយ <code class="i">def</code></li>
+        <li>បញ្ជូនទិន្នន័យចូលដោយ parameter និងទទួលលទ្ធផលដោយ <code class="i">return</code></li>
+        <li>យល់ពីអថេរក្នុង និងក្រៅអនុគមន៍ (scope)</li>
+      </ul></div>
+
+      <h3>ហេតុអ្វីត្រូវប្រើអនុគមន៍?</h3>
+      <p>អនុគមន៍ជាក្រុមកូដដែលមានឈ្មោះ អាចហៅប្រើម្តងហើយម្តងទៀត។ វាជួយកុំឲ្យសរសេរកូដដដែលៗ និងធ្វើឲ្យកម្មវិធីធំៗងាយអាន ងាយកែ។</p>
+      <div class="code"><pre><code class="language-python">def greet(name):
+    print(f"សួស្តី {name}!")
+
+greet("ដារ៉ា")
+greet("សុភា")</code></pre></div>
+<pre class="out">សួស្តី ដារ៉ា!
+សួស្តី សុភា!</pre>
+
+      <h3>return៖ បញ្ជូនលទ្ធផលត្រឡប់មកវិញ</h3>
+      <div class="code"><pre><code class="language-python">def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)
+print(add(10, 20) * 2)
+
+# parameter មានតម្លៃលំនាំដើម
+def power(base, exp=2):
+    return base ** exp
+
+print(power(4))       # ប្រើ exp = 2
+print(power(2, 5))    # ប្រើ exp = 5</code></pre></div>
+<pre class="out">8
+60
+16
+32</pre>
+      <div class="note"><b>print ខុសពី return៖</b> <code class="i">print</code> គ្រាន់តែបង្ហាញលើអេក្រង់។ <code class="i">return</code> បញ្ជូនតម្លៃត្រឡប់មកវិញ ដើម្បីយកទៅប្រើបន្ត។ អថេរដែលបង្កើតក្នុងអនុគមន៍ មិនអាចប្រើនៅក្រៅអនុគមន៍បានទេ។</div>
+
+      <h3>ឧទាហរណ៍៖ ម៉ាស៊ីនគិតលេខ</h3>
+      <div class="code"><pre><code class="language-python">def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        return "មិនអាចចែកនឹង 0 បានទេ"
+    return a / b
+
+a = float(input("លេខទី 1: "))
+op = input("សញ្ញា (+ - * /): ")
+b = float(input("លេខទី 2: "))
+
+if op == "+":
+    print("លទ្ធផល:", add(a, b))
+elif op == "-":
+    print("លទ្ធផល:", subtract(a, b))
+elif op == "*":
+    print("លទ្ធផល:", multiply(a, b))
+elif op == "/":
+    print("លទ្ធផល:", divide(a, b))
+else:
+    print("សញ្ញាមិនត្រឹមត្រូវ")</code></pre></div>
+<pre class="out">លេខទី 1: 12
+សញ្ញា (+ - * /): /
+លេខទី 2: 4
+លទ្ធផល: 3.0</pre>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>អនុគមន៍ is_even</h4></div>
+          <p>សរសេរអនុគមន៍ <code class="i">is_even(n)</code> ដែល return <code class="i">True</code> បើ n ជាលេខគូ។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">def is_even(n):
+    return n % 2 == 0
+
+print(is_even(4))    # True
+print(is_even(7))    # False</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>ផ្ទៃក្រឡារង្វង់</h4></div>
+          <p>សរសេរអនុគមន៍ <code class="i">circle_area(r)</code> គណនាផ្ទៃក្រឡារង្វង់ (π ≈ 3.14159)។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">def circle_area(r):
+    pi = 3.14159
+    return pi * r ** 2
+
+print(f"{circle_area(5):.2f}")    # 78.54</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>អនុគមន៍ get_grade</h4></div>
+          <p>យកកូដវាយតម្លៃនិទ្ទេសពីមេរៀនទី ៥ មកធ្វើជាអនុគមន៍ <code class="i">get_grade(score)</code> រួចប្រើវាជាមួយ list ពិន្ទុ។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">def get_grade(score):
+    if score >= 90:
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    elif score >= 60:
+        return "D"
+    elif score >= 50:
+        return "E"
+    return "F"
+
+for s in [95, 82, 67, 41]:
+    print(s, "→", get_grade(s))</code></pre></div>
+<pre class="out">95 → A
+82 → B
+67 → D
+41 → F</pre>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>សរសេរអនុគមន៍ <code class="i">convert(amount, to="KHR", rate=4100)</code> ដែលបំលែងដុល្លារទៅរៀល ពេល <code class="i">to="KHR"</code> និងបំលែងរៀលទៅដុល្លារ ពេល <code class="i">to="USD"</code>។</p></div>
+    </section>
+
+<!-- ============ LESSON 10 ============ -->
+    <section class="lesson" id="l10">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ១០</div>
+        <h2>ការដោះស្រាយកំហុស try / except</h2>
+        <div class="meta"><span class="chip">២ ម៉ោង</span><span class="chip">ផ្នែកទី ៤</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l10" data-l="l10"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>អានសារកំហុស (error message) និងស្គាល់ប្រភេទកំហុសទូទៅ</li>
+        <li>ចាប់កំហុសដោយ <code class="i">try</code> <code class="i">except</code> <code class="i">else</code> <code class="i">finally</code></li>
+        <li>ធ្វើឲ្យកម្មវិធីមិនគាំង ពេលអ្នកប្រើបញ្ចូលទិន្នន័យខុស</li>
+      </ul></div>
+
+      <h3>ប្រភេទកំហុសទូទៅ</h3>
+      <div class="tbl"><table>
+        <tr><th>កំហុស</th><th>ឧទាហរណ៍ដែលបង្កកំហុស</th><th>មូលហេតុ</th></tr>
+        <tr><td><code>SyntaxError</code></td><td><code>print("hi"</code></td><td>សរសេរខុសវេយ្យាករណ៍ (ខ្វះវង់ក្រចក)</td></tr>
+        <tr><td><code>NameError</code></td><td><code>prnt("hi")</code></td><td>ប្រើឈ្មោះដែលមិនទាន់មាន</td></tr>
+        <tr><td><code>TypeError</code></td><td><code>"5" + 3</code></td><td>បូកអក្សរជាមួយលេខ</td></tr>
+        <tr><td><code>ValueError</code></td><td><code>int("abc")</code></td><td>បំលែងទិន្នន័យមិនបាន</td></tr>
+        <tr><td><code>ZeroDivisionError</code></td><td><code>10 / 0</code></td><td>ចែកនឹងសូន្យ</td></tr>
+        <tr><td><code>IndexError</code></td><td><code>[1, 2][5]</code></td><td>index លើសចំនួនធាតុ</td></tr>
+      </table></div>
+      <div class="note"><b>កំហុសជារឿងធម្មតា៖</b> អ្នកសរសេរកូដជំនាញក៏ជួបកំហុសរាល់ថ្ងៃដែរ។ សូមអានបន្ទាត់ចុងក្រោយនៃសារកំហុសជាមុន ព្រោះវាប្រាប់ពីប្រភេទ និងមូលហេតុ។</div>
+
+      <h3>ចាប់កំហុសដោយ try / except</h3>
+      <div class="code"><pre><code class="language-python">try:
+    n = int(input("បញ្ចូលលេខ: "))
+    print(100 / n)
+except ValueError:
+    print("សូមបញ្ចូលតែលេខប៉ុណ្ណោះ!")
+except ZeroDivisionError:
+    print("មិនអាចចែកនឹង 0 បានទេ!")
+else:
+    print("គណនាបានជោគជ័យ")      # ដំណើរការពេលគ្មានកំហុស
+finally:
+    print("បញ្ចប់កម្មវិធី")       # ដំណើរការជានិច្ច</code></pre></div>
+<pre class="out">បញ្ចូលលេខ: abc
+សូមបញ្ចូលតែលេខប៉ុណ្ណោះ!
+បញ្ចប់កម្មវិធី</pre>
+
+      <h3>ឧទាហរណ៍៖ ម៉ាស៊ីនគិតលេខដែលមិនគាំង</h3>
+      <div class="code"><pre><code class="language-python">while True:
+    try:
+        a = float(input("លេខទី 1: "))
+        b = float(input("លេខទី 2: "))
+        print("ផលចែក =", a / b)
+        break
+    except ValueError:
+        print("បញ្ចូលខុស! សូមវាយលេខម្តងទៀត\n")
+    except ZeroDivisionError:
+        print("លេខទី 2 មិនអាចជា 0 ទេ\n")</code></pre></div>
+<pre class="out">លេខទី 1: ១០
+បញ្ចូលខុស! សូមវាយលេខម្តងទៀត
+
+លេខទី 1: 10
+លេខទី 2: 4
+ផលចែក = 2.5</pre>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>អនុគមន៍ get_number</h4></div>
+          <p>សរសេរអនុគមន៍ <code class="i">get_number(message)</code> ដែលសួររហូតដល់អ្នកប្រើវាយលេខត្រឹមត្រូវ ហើយ return លេខនោះ។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">def get_number(message):
+    while True:
+        try:
+            return float(input(message))
+        except ValueError:
+            print("នេះមិនមែនជាលេខទេ សូមព្យាយាមម្តងទៀត")
+
+age = get_number("អាយុរបស់អ្នក: ")
+print("អ្នកវាយ:", age)</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>ចាប់ IndexError</h4></div>
+          <p>មាន list ផ្លែឈើ ៣ មុខ។ សួរលេខ index ហើយបង្ហាញផ្លែឈើ។ បើ index ខុស បង្ហាញ «គ្មានធាតុនៅលេខនេះ»។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">fruits = ["ស្វាយ", "ចេក", "ម្នាស់"]
+try:
+    i = int(input("index (0-2): "))
+    print(fruits[i])
+except IndexError:
+    print("គ្មានធាតុនៅលេខនេះ")
+except ValueError:
+    print("សូមវាយលេខ")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>មធ្យមភាគពី list ទទេ</h4></div>
+          <p>សរសេរអនុគមន៍ <code class="i">average(numbers)</code> ដែល return 0 ពេល list ទទេ ជំនួសឲ្យការគាំង។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">def average(numbers):
+    try:
+        return sum(numbers) / len(numbers)
+    except ZeroDivisionError:
+        return 0
+
+print(average([80, 90, 70]))   # 80.0
+print(average([]))             # 0</code></pre></div>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>កែល្បែងទាយលេខពីមេរៀនទី ៦ មិនឲ្យគាំង ពេលអ្នកលេងវាយអក្សរជំនួសលេខ ហើយកុំរាប់ការវាយខុសនោះជាការទាយមួយដង។</p></div>
+    </section>
+
+<!-- ============ LESSON 11 ============ -->
+    <section class="lesson" id="l11">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ១១</div>
+        <h2>ការអាន និងសរសេរឯកសារ</h2>
+        <div class="meta"><span class="chip">២.៥ ម៉ោង</span><span class="chip">ផ្នែកទី ៤</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l11" data-l="l11"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>រក្សាទុកទិន្នន័យក្នុងឯកសារ ដើម្បីកុំឲ្យបាត់ពេលបិទកម្មវិធី</li>
+        <li>បើកឯកសារដោយ <code class="i">with open()</code> ក្នុងរបៀប r, w, a</li>
+        <li>អានឯកសារម្តងមួយបន្ទាត់</li>
+      </ul></div>
+
+      <h3>របៀបបើកឯកសារ</h3>
+      <div class="tbl"><table>
+        <tr><th>របៀប</th><th>អត្ថន័យ</th><th>ចំណាំ</th></tr>
+        <tr><td><code>"r"</code></td><td>អាន (read)</td><td>កំហុស <code>FileNotFoundError</code> បើគ្មានឯកសារ</td></tr>
+        <tr><td><code>"w"</code></td><td>សរសេរ (write)</td><td>លុបខ្លឹមសារចាស់ចោលទាំងអស់</td></tr>
+        <tr><td><code>"a"</code></td><td>បន្ថែម (append)</td><td>សរសេរបន្តនៅចុងឯកសារ</td></tr>
+      </table></div>
+
+      <h3>សរសេរ និងអានឯកសារ</h3>
+      <div class="code"><pre><code class="language-python"># សរសេរ
+with open("names.txt", "w", encoding="utf-8") as f:
+    f.write("សុខា\n")
+    f.write("ដារ៉ា\n")
+    f.write("វណ្ណា\n")
+
+# អាន
+with open("names.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        print(line.strip())    # strip() លុប \n នៅចុងបន្ទាត់</code></pre></div>
+<pre class="out">សុខា
+ដារ៉ា
+វណ្ណា</pre>
+      <div class="note"><b>សំខាន់សម្រាប់អក្សរខ្មែរ៖</b> ត្រូវដាក់ <code class="i">encoding="utf-8"</code> ជានិច្ច។ បើមិនដាក់ទេ អក្សរខ្មែរអាចខូច ឬបង្កកំហុសលើ Windows។ ពាក្យ <code class="i">with</code> បិទឯកសារដោយស្វ័យប្រវត្តិ ពេលចប់។</div>
+
+      <h3>ឧទាហរណ៍៖ កម្មវិធីបញ្ជីការងារ (To-do)</h3>
+      <div class="code"><pre><code class="language-python">FILE = "todo.txt"
+
+def load_tasks():
+    tasks = []
+    try:
+        with open(FILE, "r", encoding="utf-8") as f:
+            for line in f:
+                tasks.append(line.strip())
+    except FileNotFoundError:
+        pass                       # មិនទាន់មានឯកសារ គឺបញ្ជីទទេ
+    return tasks
+
+def add_task(task):
+    with open(FILE, "a", encoding="utf-8") as f:
+        f.write(task + "\n")
+
+while True:
+    print("\n1. មើលការងារ   2. បន្ថែមការងារ   3. ចាកចេញ")
+    choice = input("ជ្រើសរើស: ")
+    if choice == "1":
+        tasks = load_tasks()
+        if not tasks:
+            print("មិនទាន់មានការងារទេ")
+        for i, task in enumerate(tasks, start=1):
+            print(f"{i}. {task}")
+    elif choice == "2":
+        add_task(input("ការងារថ្មី: "))
+        print("បានរក្សាទុក!")
+    elif choice == "3":
+        break</code></pre></div>
+<pre class="out">1. មើលការងារ   2. បន្ថែមការងារ   3. ចាកចេញ
+ជ្រើសរើស: 2
+ការងារថ្មី: ធ្វើកិច្ចការផ្ទះគណិតវិទ្យា
+បានរក្សាទុក!
+
+1. មើលការងារ   2. បន្ថែមការងារ   3. ចាកចេញ
+ជ្រើសរើស: 1
+1. ធ្វើកិច្ចការផ្ទះគណិតវិទ្យា</pre>
+      <p><code class="i">enumerate(tasks, start=1)</code> ឲ្យទាំងលេខរៀង និងធាតុ ក្នុងពេលដើរកាត់ list។</p>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>ម្ហូបដែលខ្ញុំចូលចិត្ត</h4></div>
+          <p>សួរម្ហូបដែលចូលចិត្ត ៣ មុខ ហើយសរសេរចូលឯកសារ <code class="i">food.txt</code> ម្តងមួយបន្ទាត់។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">with open("food.txt", "w", encoding="utf-8") as f:
+    for i in range(3):
+        food = input(f"ម្ហូបទី {i + 1}: ")
+        f.write(food + "\n")
+print("បានរក្សាទុកក្នុង food.txt")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>រាប់បន្ទាត់</h4></div>
+          <p>អានឯកសារ <code class="i">food.txt</code> ហើយបង្ហាញថាមានប៉ុន្មានបន្ទាត់។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">with open("food.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+print("ចំនួនបន្ទាត់:", len(lines))</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>កំណត់ហេតុប្រចាំថ្ងៃ</h4></div>
+          <p>សួរអ្នកប្រើឲ្យសរសេរអ្វីមួយ ហើយបន្ថែមវាទៅក្នុង <code class="i">diary.txt</code> ដោយមិនលុបខ្លឹមសារចាស់។ បន្ទាប់មកបង្ហាញខ្លឹមសារទាំងអស់។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">entry = input("ថ្ងៃនេះ៖ ")
+with open("diary.txt", "a", encoding="utf-8") as f:
+    f.write("- " + entry + "\n")
+
+with open("diary.txt", "r", encoding="utf-8") as f:
+    print(f.read())</code></pre></div>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>បង្កើតឯកសារ <code class="i">scores.txt</code> ដែលមានពិន្ទុម្តងមួយបន្ទាត់។ សរសេរកម្មវិធីអានឯកសារនោះ បំលែងទៅជាលេខ ហើយបង្ហាញមធ្យមភាគ ពិន្ទុខ្ពស់បំផុត និងទាបបំផុត។</p></div>
+    </section>
+
+<!-- ============ LESSON 12 ============ -->
+    <section class="lesson" id="l12">
+      <div class="lesson-head">
+        <div class="ln">មេរៀនទី ១២</div>
+        <h2>Modules និងបណ្ណាល័យ</h2>
+        <div class="meta"><span class="chip">២.៥ ម៉ោង</span><span class="chip">ផ្នែកទី ៤</span>
+          <label class="done-lbl"><input type="checkbox" id="done-l12" data-l="l12"> បានរៀនចប់</label></div>
+      </div>
+      <div class="goals"><h3>គោលបំណង</h3><ul>
+        <li>នាំចូល និងប្រើ module ស្រាប់ៗ៖ <code class="i">math</code> <code class="i">random</code> <code class="i">datetime</code></li>
+        <li>ស្គាល់ <code class="i">pip</code> សម្រាប់ដំឡើងបណ្ណាល័យបន្ថែម</li>
+        <li>បង្កើត module ផ្ទាល់ខ្លួន</li>
+      </ul></div>
+
+      <h3>Module ស្រាប់ៗរបស់ Python</h3>
+      <p>Module ជាឯកសារ Python ដែលមានអនុគមន៍រួចជាស្រេច។ យើងគ្រាន់តែ <code class="i">import</code> មកប្រើ មិនចាំបាច់សរសេរខ្លួនឯង។</p>
+      <div class="code"><pre><code class="language-python">import math
+print(math.sqrt(16))      # ឫសការេ
+print(math.pi)
+print(math.ceil(4.2))     # បង្គត់ឡើង
+print(math.floor(4.8))    # បង្គត់ចុះ
+
+import random
+print(random.randint(1, 6))                    # លេខចៃដន្យ 1-6
+print(random.choice(["ក្រហម", "ខៀវ", "បៃតង"]))  # ជ្រើសមួយដោយចៃដន្យ
+
+from datetime import date
+today = date.today()
+print(today)
+print("ឆ្នាំ:", today.year)</code></pre></div>
+<pre class="out">4.0
+3.141592653589793
+5
+4
+3
+ខៀវ
+2026-11-07
+ឆ្នាំ: 2026</pre>
+      <p>លទ្ធផលពី <code class="i">random</code> និង <code class="i">date.today()</code> នឹងខុសគ្នារាល់ពេលដំណើរការ។</p>
+
+      <h3>ដំឡើងបណ្ណាល័យបន្ថែមដោយ pip</h3>
+      <p>មានបណ្ណាល័យរាប់សែនដែលអ្នកដទៃបានបង្កើត។ ដំឡើងដោយវាយក្នុង Command Prompt ឬ Terminal (មិនមែនក្នុងឯកសារ Python ទេ)៖</p>
+      <div class="code"><pre><code class="language-python">pip install requests</code></pre></div>
+      <p>ក្នុង Google Colab វាយ <code class="i">!pip install requests</code> ក្នុង cell។</p>
+
+      <h3>បង្កើត module ផ្ទាល់ខ្លួន</h3>
+      <div class="code"><pre><code class="language-python"># ឯកសារ mytools.py
+def greet(name):
+    return f"សួស្តី {name}"
+
+def usd_to_khr(usd, rate=4100):
+    return usd * rate</code></pre></div>
+      <div class="code"><pre><code class="language-python"># ឯកសារ main.py (នៅក្នុង folder ដូចគ្នា)
+import mytools
+
+print(mytools.greet("ដារ៉ា"))
+print(mytools.usd_to_khr(10))</code></pre></div>
+<pre class="out">សួស្តី ដារ៉ា
+41000</pre>
+
+      <h3>ឧទាហរណ៍៖ បង្កើតពាក្យសម្ងាត់ចៃដន្យ</h3>
+      <div class="code"><pre><code class="language-python">import random
+import string
+
+def make_password(length=10):
+    chars = string.ascii_letters + string.digits + "!@#$%"
+    password = ""
+    for _ in range(length):
+        password += random.choice(chars)
+    return password
+
+print(make_password())
+print(make_password(16))</code></pre></div>
+<pre class="out">k7#Qm2pX!a
+Zr4$Lw9bN1t@Hs6e</pre>
+
+      <h3>លំហាត់អនុវត្ត</h3>
+      <div class="exercises">
+        <div class="ex"><div class="ex-top"><span class="lvl e">ងាយ</span><h4>បោះគ្រាប់ឡុកឡាក់</h4></div>
+          <p>បោះគ្រាប់ឡុកឡាក់ ២ គ្រាប់ (1–6) ហើយបង្ហាញលេខនីមួយៗ និងផលបូក។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">import random
+d1 = random.randint(1, 6)
+d2 = random.randint(1, 6)
+print(f"គ្រាប់ទី 1: {d1}  គ្រាប់ទី 2: {d2}  សរុប: {d1 + d2}")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>នៅសល់ប៉ុន្មានថ្ងៃដល់ឆ្នាំថ្មី</h4></div>
+          <p>ប្រើ <code class="i">datetime</code> គណនាចំនួនថ្ងៃពីថ្ងៃនេះ ដល់ថ្ងៃទី 1 មករា ឆ្នាំក្រោយ។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">from datetime import date
+
+today = date.today()
+new_year = date(today.year + 1, 1, 1)
+days_left = (new_year - today).days
+print(f"នៅសល់ {days_left} ថ្ងៃទៀតដល់ឆ្នាំ {today.year + 1}")</code></pre></div>
+          </details></div>
+        <div class="ex"><div class="ex-top"><span class="lvl m">មធ្យម</span><h4>ទ្រឹស្តីបទពីតាករ</h4></div>
+          <p>សួរជ្រុងទាំងពីរនៃត្រីកោណកែង ហើយប្រើ <code class="i">math</code> គណនាអ៊ីប៉ូតេនុស។</p>
+          <details><summary>មើលចម្លើយគំរូ</summary>
+            <div class="code"><pre><code class="language-python">import math
+a = float(input("ជ្រុង a: "))
+b = float(input("ជ្រុង b: "))
+c = math.sqrt(a ** 2 + b ** 2)
+print(f"អ៊ីប៉ូតេនុស = {c:.2f}")</code></pre></div>
+          </details></div>
+      </div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>បង្កើត module <code class="i">schooltools.py</code> ដែលមានអនុគមន៍ <code class="i">get_grade(score)</code> និង <code class="i">average(numbers)</code> ពីមេរៀនមុនៗ។ បន្ទាប់មកបង្កើត <code class="i">main.py</code> ដែល import និងប្រើអនុគមន៍ទាំងពីរ។</p></div>
+    </section>
+
+<!-- ============ PROJECT ============ -->
+    <section class="lesson" id="project">
+      <div class="lesson-head">
+        <div class="ln">បញ្ចប់វគ្គ</div>
+        <h2>គម្រោងបញ្ចប់វគ្គ</h2>
+        <div class="meta"><span class="chip">៤–៦ ម៉ោង</span><span class="chip">ប្រើមេរៀនទាំង ១២</span></div>
+      </div>
+      <p>សិស្សម្នាក់ៗ (ឬក្រុម ២ នាក់) ជ្រើសរើសគម្រោងមួយ ហើយបង្ហាញលទ្ធផលនៅចុងវគ្គ។</p>
+      <div class="projects">
+        <div class="proj"><h4>ប្រព័ន្ធគ្រប់គ្រងពិន្ទុសិស្ស</h4><ul>
+          <li>បន្ថែមសិស្ស និងពិន្ទុ</li><li>បង្ហាញរបាយការណ៍ និងនិទ្ទេស</li><li>គណនាមធ្យមភាគថ្នាក់</li><li>រក្សាទុកក្នុងឯកសារ</li></ul>
+          <div class="uses">ប្រើមេរៀន ៥, ៧, ៨, ៩, ១០, ១១</div></div>
+        <div class="proj"><h4>ល្បែងសំណួរ-ចម្លើយ</h4><ul>
+          <li>សំណួរយ៉ាងតិច ១០</li><li>ច្របល់លំដាប់សំណួរដោយ random</li><li>រាប់ពិន្ទុ និងបង្ហាញលទ្ធផល</li><li>រក្សាពិន្ទុខ្ពស់បំផុតក្នុងឯកសារ</li></ul>
+          <div class="uses">ប្រើមេរៀន ៤, ៦, ៧, ៨, ១១, ១២</div></div>
+        <div class="proj"><h4>ប្រព័ន្ធលក់ទំនិញហាងតូច</h4><ul>
+          <li>ម៉ឺនុយទំនិញ និងតម្លៃ</li><li>បញ្ជាទិញច្រើនមុខ</li><li>បោះពុម្ពវិក្កយបត្រជា ដុល្លារ និងរៀល</li><li>កត់ត្រាការលក់ក្នុងឯកសារ</li></ul>
+          <div class="uses">ប្រើមេរៀន ២, ៤, ៦, ៨, ៩, ១០, ១១</div></div>
+      </div>
+
+      <h3>លក្ខណៈវិនិច្ឆ័យវាយតម្លៃ</h3>
+      <div class="tbl"><table>
+        <tr><th>ផ្នែក</th><th>ពិន្ទុ</th><th>អ្វីដែលគ្រូពិនិត្យ</th></tr>
+        <tr><td>មុខងារ</td><td>40</td><td>កម្មវិធីធ្វើការបានគ្រប់មុខងារដែលតម្រូវ</td></tr>
+        <tr><td>រចនាសម្ព័ន្ធកូដ</td><td>20</td><td>ប្រើអនុគមន៍ ឈ្មោះអថេរមានអត្ថន័យ មាន comment</td></tr>
+        <tr><td>ដោះស្រាយកំហុស</td><td>15</td><td>មិនគាំងពេលបញ្ចូលទិន្នន័យខុស</td></tr>
+        <tr><td>រក្សាទុកទិន្នន័យ</td><td>15</td><td>ទិន្នន័យនៅដដែលពេលបើកកម្មវិធីម្តងទៀត</td></tr>
+        <tr><td>ការបង្ហាញ</td><td>10</td><td>ពន្យល់កូដ និងសាកល្បងផ្ទាល់មុខថ្នាក់</td></tr>
+        <tr><td><b>សរុប</b></td><td><b>100</b></td><td></td></tr>
+      </table></div>
+
+      <h3>ចម្លើយគំរូ៖ ប្រព័ន្ធគ្រប់គ្រងពិន្ទុសិស្ស</h3>
+      <p>សម្រាប់គ្រូ ឬសម្រាប់សិស្សមើលក្រោយពេលព្យាយាមខ្លួនឯងរួច។</p>
+      <details><summary>បង្ហាញកូដពេញលេញ</summary>
+        <div class="code"><pre><code class="language-python">FILE = "students.txt"
+
+
+def load_students():
+    """អានទិន្នន័យសិស្សពីឯកសារ"""
+    students = {}
+    try:
+        with open(FILE, "r", encoding="utf-8") as f:
+            for line in f:
+                name, score = line.strip().split(",")
+                students[name] = float(score)
+    except FileNotFoundError:
+        pass
+    return students
+
+
+def save_students(students):
+    """រក្សាទុកទិន្នន័យសិស្សទាំងអស់ចូលឯកសារ"""
+    with open(FILE, "w", encoding="utf-8") as f:
+        for name, score in students.items():
+            f.write(f"{name},{score}\n")
+
+
+def get_grade(score):
+    if score >= 90:
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    elif score >= 60:
+        return "D"
+    elif score >= 50:
+        return "E"
+    return "F"
+
+
+def add_student(students):
+    name = input("ឈ្មោះសិស្ស: ").strip()
+    if not name:
+        print("ឈ្មោះមិនអាចទទេបានទេ")
+        return
+    try:
+        score = float(input("ពិន្ទុ (0-100): "))
+    except ValueError:
+        print("ពិន្ទុត្រូវតែជាលេខ!")
+        return
+    if not 0 &lt;= score &lt;= 100:
+        print("ពិន្ទុត្រូវនៅចន្លោះ 0 ដល់ 100")
+        return
+    students[name] = score
+    save_students(students)
+    print(f"បានបន្ថែម {name} ដោយជោគជ័យ")
+
+
+def show_report(students):
+    if not students:
+        print("មិនទាន់មានទិន្នន័យសិស្សទេ")
+        return
+    print("\n----- របាយការណ៍ពិន្ទុ -----")
+    for name, score in students.items():
+        print(f"{name}: {score:.1f} ({get_grade(score)})")
+    scores = list(students.values())
+    print(f"មធ្យមភាគថ្នាក់: {sum(scores) / len(scores):.2f}")
+    best = max(students, key=students.get)
+    print(f"សិស្សពូកែបំផុត: {best} ({students[best]:.1f})")
+
+
+def main():
+    students = load_students()
+    while True:
+        print("\n1. បន្ថែមសិស្ស   2. មើលរបាយការណ៍   3. ចាកចេញ")
+        choice = input("ជ្រើសរើស: ")
+        if choice == "1":
+            add_student(students)
+        elif choice == "2":
+            show_report(students)
+        elif choice == "3":
+            print("លាហើយ!")
+            break
+        else:
+            print("ជម្រើសមិនត្រឹមត្រូវ")
+
+
+main()</code></pre></div>
+      </details>
+    </section>
+
+    <section class="tips" id="teacher">
+      <h2>គន្លឹះសម្រាប់គ្រូ</h2>
+      <ul style="margin:0;padding-left:22px">
+        <li><b>វាយកូដផ្ទាល់មុខសិស្ស៖</b> សរសេរកូដឧទាហរណ៍ម្តងមួយបន្ទាត់ ហើយឲ្យសិស្សទាយលទ្ធផល មុនចុច Run។</li>
+        <li><b>ទុកឲ្យសិស្សជួបកំហុស៖</b> បង្ហាញកំហុសដោយចេតនា ហើយអានសារកំហុសជាមួយគ្នា ដើម្បីកុំឲ្យសិស្សខ្លាចកំហុស។</li>
+        <li><b>សរសេរកូដជាគូ៖</b> ម្នាក់វាយ ម្នាក់ទៀតណែនាំ ប្តូរតួនាទីរៀងរាល់ ១០ នាទី។</li>
+        <li><b>ប្រើឧទាហរណ៍ក្នុងជីវិតប្រចាំថ្ងៃ៖</b> ប្តូរប្រាក់ ពិន្ទុប្រឡង ហាងកាហ្វេ ធ្វើឲ្យសិស្សងាយយល់ជាងលេខអរូបី។</li>
+        <li><b>ពិនិត្យកិច្ចការផ្ទះនៅដើមម៉ោង៖</b> ហៅសិស្ស ២–៣ នាក់មកបង្ហាញដំណោះស្រាយផ្សេងៗគ្នា ព្រោះកូដអាចសរសេរបានច្រើនរបៀប។</li>
+      </ul>
+    </section>
+    <nav class="lesson-pager" id="lesson-pager" aria-label="ផ្លាស់ប្តូរមេរៀន" hidden></nav>
+    <footer>វគ្គសិក្សា «រៀន Python ពីសូន្យ» · កូដទាំងអស់ប្រើជាមួយ Python 3</footer>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="js/copy-code.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/content-nav.js"></script>
+<script src="js/drawer.js"></script>
+</body>
+</html>
