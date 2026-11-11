@@ -84,8 +84,11 @@
     try { id = decodeURIComponent(location.hash.slice(1)) || 'start'; }
     catch (e) { id = 'start'; }
     render(id, focusHeading);
-    if (!focusHeading) window.scrollTo(0, 0);
+    if (!focusHeading) window.scrollTo({ top: 0, behavior: 'instant' });
   }
   window.addEventListener('hashchange', function () { fromLocation(true); });
+  window.addEventListener('load', function () {
+    setTimeout(function () { window.scrollTo({ top: 0, behavior: 'instant' }); }, 0);
+  }, { once: true });
   fromLocation(false);
 })();

@@ -101,6 +101,7 @@ main{width:100%;max-width:none}
 .goals{border:1px solid color-mix(in srgb,var(--accent) 17%,transparent);padding:20px 23px;border-radius:13px}
 .goals h3{font-size:16px}
 .lesson h3{margin-top:33px}
+.lesson .goals h3,.lesson .hw h3{margin:0 0 6px}
 .code pre{border-radius:12px}
 .ex{border-radius:13px;padding:20px 22px}
 .ex:hover,.proj:hover{border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
@@ -132,14 +133,35 @@ footer{margin:22px 3px 0;text-align:center;font-size:12px}
   .topbar-in{gap:10px}
   .topbar-divider,.topbar-location,.brand-text{display:none}
   .topbar-prog{font-size:12px;padding:3px 9px}
-  .hero-in{padding-block:36px 38px}
-  .hero h1{font-size:clamp(40px,10vw,54px)}
-  .hero p.lead{font-size:15px}
-  .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-  .stat{border:0;padding:0;min-width:0}
+  nav.toc{width:min(340px,92vw)}
+  .hero-in{gap:22px;padding-block:29px 34px}
+  .eyebrow{padding:4px 11px;font-size:11px}
+  .hero h1{font-size:clamp(38px,9.5vw,50px);line-height:1.22;margin:14px 0 12px}
+  .hero p.lead{font-size:14.5px;line-height:1.75}
+  .hero-actions{margin-top:21px}
+  .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:22px}
+  .stat{min-width:0;min-height:62px;padding:8px 12px;border:1px solid rgba(255,255,255,.13);border-radius:11px;background:rgba(255,255,255,.055)}
+  .stat b{font-size:20px;line-height:1.25}
+  .stat small{font-size:11px;line-height:1.4}
+  .progress{margin-top:14px;padding:12px 14px}
   .progress-row{gap:8px;flex-wrap:wrap}
-  .repl{font-size:11px;padding:19px 16px;border-radius:15px}
-  .intro,.lesson,.tips{padding:22px 19px;border-radius:16px}
+  .repl{font-size:11px;padding:15px 16px;border-radius:15px}
+  .repl .dots{margin-bottom:11px}
+  .repl-line:nth-child(4),.repl-line:nth-child(5),.repl-line:nth-child(6){display:none}
+  .shell{padding-block:15px 44px}
+  .intro,.lesson,.tips{padding:21px 19px;border-radius:16px;line-height:1.75}
+  .lesson-head{padding-bottom:18px;margin-bottom:21px}
+  .lesson h2{font-size:clamp(25px,6.4vw,32px);line-height:1.35}
+  .lesson h3{font-size:17px;margin-top:26px}
+  .goals{padding:16px 18px}
+  .done-lbl{min-height:40px;padding:5px 10px}
+  .exercises{gap:11px}
+  .ex,.proj{padding:17px 18px}
+  .projects{gap:11px}
+  .code pre{font-size:13px}
+  pre.out{font-size:12.5px}
+  table{font-size:13px}
+  th,td{padding:8px 10px}
   .parts{grid-template-columns:1fr}
   .lesson-pager{grid-template-columns:1fr;gap:8px}
   .pager-link{padding:13px 12px}
@@ -147,13 +169,17 @@ footer{margin:22px 3px 0;text-align:center;font-size:12px}
   .pager-next{grid-column:1}
   .viewbar-home{font-size:12px}
 }
+@media (min-width:360px) and (max-width:600px){
+  .brand-text{display:block;font-size:12px;letter-spacing:.04em}
+  .brand-text small{display:none}
+}
 @media (max-width:380px){
   .hero h1{font-size:36px}
   .hero-actions{display:grid;grid-template-columns:1fr}
   .hero-actions .button{width:100%}
   .intro,.lesson,.tips{padding:20px 16px}
   .goals,.ex,.proj{padding:14px 15px}
-  .stat b{font-size:20px}
 }
+@media (max-width:359px){.brand-text{display:none}}
 @media (prefers-reduced-motion:reduce){.button,.pager-link{transition:none}.button:hover,.pager-link:hover{transform:none}}
 @media print{.hero,.toc,.viewbar,.lesson-pager{display:none!important}.shell{display:block;padding:0}main>section[hidden]:not([hidden=until-found i]){display:block!important}.lesson,.intro,.tips{box-shadow:none;break-inside:avoid;page-break-after:always}}
