@@ -504,7 +504,7 @@ else:
     print("អ្នកនៅក្មេងពេកសម្រាប់បោះឆ្នោត")</code></pre></div>
 <pre class="out">អាយុរបស់អ្នក: 20
 អ្នកអាចបោះឆ្នោតបាន</pre>
-      <div class="note"><b>Indentation៖</b> កូដនៅក្រោម <code class="i">if</code> ត្រូវចូលបន្ទាត់ <b>4 ដកឃ្លា</b> (ឬចុច Tab)។ ត្រូវមានសញ្ញា <code class="i">:</code> នៅចុងបន្ទាត់ <code class="i">if</code> ជានិច្ច។ បើភ្លេច Python នឹងបង្ហាញ <code class="i">IndentationError</code>។</div>
+      <div class="note"><b>ចំណាំអំពីវេយ្យាករណ៍៖</b> ដាក់សញ្ញា <code class="i">:</code> នៅចុងបន្ទាត់ <code class="i">if</code> ហើយចូលបន្ទាត់កូដខាងក្រោមដោយ <b>4 ដកឃ្លា</b>។ បើភ្លេច <code class="i">:</code> នឹងបង្ហាញ <code class="i">SyntaxError</code>។ បើមិនចូលបន្ទាត់ នឹងបង្ហាញ <code class="i">IndentationError</code>។</div>
 
       <h3>ឧទាហរណ៍៖ វាយតម្លៃនិទ្ទេស A–F</h3>
       <div class="code"><pre><code class="language-python">score = float(input("បញ្ចូលពិន្ទុ (0-100): "))
@@ -579,7 +579,7 @@ else:
 print(f"តម្លៃសំបុត្រ: {price:,} រៀល")   # :, ដាក់សញ្ញាក្បៀស</code></pre></div>
           </details></div>
       </div>
-      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>សរសេរកម្មវិធីចូលប្រព័ន្ធ (login)៖ កំណត់ username និង password ទុកក្នុងកូដ។ សួរអ្នកប្រើ ហើយបង្ហាញសារផ្សេងគ្នា បើ username ខុស បើ password ខុស ឬបើត្រូវទាំងពីរ។</p></div>
+      <div class="hw"><h3>កិច្ចការផ្ទះ</h3><p>សរសេរកម្មវិធីចូលប្រព័ន្ធ (login) សម្រាប់ហាត់លក្ខខណ្ឌ៖ កំណត់ username និង password គំរូទុកក្នុងកូដ។ សួរអ្នកប្រើ ហើយបង្ហាញសារផ្សេងគ្នា បើ username ខុស បើ password ខុស ឬបើត្រូវទាំងពីរ។ <b>កុំប្រើពាក្យសម្ងាត់ពិត ឬយករបៀបនេះទៅប្រើក្នុងប្រព័ន្ធពិត។</b></p></div>
     </section>
 
 <!-- ============ LESSON 6 ============ -->
@@ -1077,12 +1077,13 @@ finally:
         print("បញ្ចូលខុស! សូមវាយលេខម្តងទៀត\n")
     except ZeroDivisionError:
         print("លេខទី 2 មិនអាចជា 0 ទេ\n")</code></pre></div>
-<pre class="out">លេខទី 1: ១០
+<pre class="out">លេខទី 1: ដប់
 បញ្ចូលខុស! សូមវាយលេខម្តងទៀត
 
-លេខទី 1: 10
+លេខទី 1: ១០
 លេខទី 2: 4
 ផលចែក = 2.5</pre>
+      <p>Python ទទួលលេខខ្មែរជាទម្រង់អក្សរលេខបាន៖ <code class="i">float("១០")</code> ឲ្យលទ្ធផល <code class="i">10.0</code>។ ពាក្យ «ដប់» មិនមែនជាអក្សរលេខ ទើបបង្ក <code class="i">ValueError</code>។</p>
 
       <h3>លំហាត់អនុវត្ត</h3>
       <div class="exercises">
@@ -1278,10 +1279,18 @@ print("ឆ្នាំ:", today.year)</code></pre></div>
 ឆ្នាំ: 2026</pre>
       <p>លទ្ធផលពី <code class="i">random</code> និង <code class="i">date.today()</code> នឹងខុសគ្នារាល់ពេលដំណើរការ។</p>
 
-      <h3>ដំឡើងបណ្ណាល័យបន្ថែមដោយ pip</h3>
-      <p>មានបណ្ណាល័យរាប់សែនដែលអ្នកដទៃបានបង្កើត។ ដំឡើងដោយវាយក្នុង Command Prompt ឬ Terminal (មិនមែនក្នុងឯកសារ Python ទេ)៖</p>
-      <div class="code"><pre><code class="language-python">pip install requests</code></pre></div>
-      <p>ក្នុង Google Colab វាយ <code class="i">!pip install requests</code> ក្នុង cell។</p>
+      <h3>រៀបចំបរិស្ថាន និងដំឡើងបណ្ណាល័យដោយ pip</h3>
+      <p>បើក Command Prompt ឬ Terminal នៅក្នុងថតគម្រោង ហើយបង្កើត <code class="i">virtual environment</code> ដើម្បីរក្សាបណ្ណាល័យរបស់គម្រោងនេះដាច់ដោយឡែកពីគម្រោងផ្សេង៖</p>
+      <div class="code"><pre><code class="language-none">python -m venv .venv</code></pre></div>
+      <p>បន្ទាប់មកដំណើរការបរិស្ថាននេះតាមប្រព័ន្ធដែលប្រើ៖</p>
+      <div class="code"><pre><code class="language-none"># Windows Command Prompt
+.venv\Scripts\activate.bat
+
+# macOS ឬ Linux
+source .venv/bin/activate</code></pre></div>
+      <p>ជ្រើសប្រើតែបន្ទាត់បញ្ជាដែលត្រូវនឹងកុំព្យូទ័ររបស់អ្នក។ រួចដំឡើងបណ្ណាល័យដោយវាយក្នុង Terminal មិនមែនក្នុងឯកសារ Python៖</p>
+      <div class="code"><pre><code class="language-none">python -m pip install requests</code></pre></div>
+      <p>ក្នុង Google Colab មិនចាំបាច់បង្កើត <code class="i">venv</code> ទេ។ វាយ <code class="i">!pip install requests</code> ក្នុង cell។</p>
 
       <h3>បង្កើត module ផ្ទាល់ខ្លួន</h3>
       <div class="code"><pre><code class="language-python"># ឯកសារ mytools.py
@@ -1299,20 +1308,21 @@ print(mytools.usd_to_khr(10))</code></pre></div>
 41000</pre>
 
       <h3>ឧទាហរណ៍៖ បង្កើតពាក្យសម្ងាត់ចៃដន្យ</h3>
-      <div class="code"><pre><code class="language-python">import random
+      <div class="code"><pre><code class="language-python">import secrets
 import string
 
-def make_password(length=10):
+def make_password(length=16):
     chars = string.ascii_letters + string.digits + "!@#$%"
     password = ""
     for _ in range(length):
-        password += random.choice(chars)
+        password += secrets.choice(chars)
     return password
 
 print(make_password())
-print(make_password(16))</code></pre></div>
-<pre class="out">k7#Qm2pX!a
-Zr4$Lw9bN1t@Hs6e</pre>
+print(make_password(20))</code></pre></div>
+<pre class="out">X7h$Oe1L%C8M6Or8
+T9w$AmIKxvoHBj2koesN</pre>
+      <p>នេះជាលទ្ធផលគំរូប៉ុណ្ណោះ។ ពាក្យសម្ងាត់ដែលបង្កើតបាននឹងខុសគ្នារាល់ពេលដំណើរការ។ <code class="i">secrets</code> សមស្របសម្រាប់ពាក្យសម្ងាត់ ខណៈ <code class="i">random</code> សម្រាប់ការចៃដន្យទូទៅ ដូចជាបោះគ្រាប់ឡុកឡាក់។</p>
 
       <h3>លំហាត់អនុវត្ត</h3>
       <div class="exercises">
